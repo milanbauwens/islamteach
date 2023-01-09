@@ -50,3 +50,12 @@ window.onclick = function(event) {
     }
   }
 }
+
+// Froala Editor
+setTimeout(function () {
+  $(".fr-wrapper a").each(function () {
+      if ($(this).text() === "Unlicensed copy of the Froala Editor. Use it legally by purchasing a license.") {
+          $(this).hide();
+      }
+  });
+}, 50);
