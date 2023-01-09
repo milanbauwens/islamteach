@@ -1,0 +1,46 @@
+{% extends "_layouts/users" %}
+
+{% block content %}
+
+	<section class="login__container" style="background-image: url({{siteUrl}}assets/resources/images/login.svg)">
+		<div class="login__wrapper">
+			<form method="post" accept-charset="UTF-8">
+				{{ csrfInput() }}
+				{{ actionInput('users/login') }}
+
+				{% if errorMessage is defined %}
+					<p class="error">{{ errorMessage }}</p>
+				{% endif %}
+
+				<div class="formgroup">
+					<label for="loginName">E-mail</label>
+					{{ input('text', 'loginName', '', {
+                        id: 'loginName',
+                        autocomplete: 'username', 
+                    }) }}
+				</div>
+
+				<div class="formgroup">
+					<label for="password">Password</label>
+					{{ input('password', 'password', null, {
+                        id: 'password',
+                    }) }}
+				</div>
+				<div class="formgroup">
+					<label>
+						{{ input('checkbox', 'rememberMe', '1') }}
+						Remember me
+					</label>
+				</div>
+
+				<button class="button button--login">Login</button>
+			</form>
+
+			<p class="formgroup formgroup--center">
+				<a class="link" href="{{ url('reset-password') }}">Forgot your password?</a>
+			</p>
+
+		</div>
+	</section>
+
+{% endblock %}

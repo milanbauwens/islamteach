@@ -1,0 +1,43 @@
+fieldLayouts:
+  5fd270a7-0f24-4f3f-9499-b84df13a64f0:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 83ce0f5c-f7b5-4ef0-ac86-da9250b6e639
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 8c0a5f56-a8ed-4c79-ac52-2dfd7f86d901
+        userCondition: null
+handle: escaperoomOverview
+hasTitleField: false
+name: 'Escaperoom Overview'
+section: a1f9808d-c4a1-4435-816c-adf84ca258be # Escaperoom Overview
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

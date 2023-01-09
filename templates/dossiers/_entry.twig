@@ -1,0 +1,104 @@
+{% extends "_layouts/page" %}
+{% block content %}
+
+	{% set image = entry.articleThumbnail.one() %}
+	{% set pages = craft.entries({
+		section : 'dossiers',
+		descendantOf: entry.id,
+		})
+	%}
+
+	<img class="article-detail__image" src="{{siteUrl}}/uploads/{{image.url}}">
+
+	<div
+		class="wrapper--small">
+
+		{# Display breadcrumbs if the entry is a child of the dossier #}
+		<ul class="breadcrumbs">
+			<li class="breadcrumbs__link">
+				<a href="{{siteUrl}}/dashboard">Overzicht</a>
+			</li>
+			<img src="{{siteUrl}}/assets/resources/icons/chevron_right.svg" alt="arrow">
+			{% for crumb in entry.getAncestors() %}
+				<li class="breadcrumbs__link">{{ crumb.getLink() }}</li>
+				<img src="{{siteUrl}}/assets/resources/icons/chevron_right.svg" alt="arrow">
+			{% endfor %}
+			<li class="breadcrumbs__link active">
+				{{ entry.title|striptags|length > 30 ? entry.title|striptags|slice(0, 30) ~ '...' : entry.title|striptags }}
+			</li>
+		</ul>
+
+		<p class="article-detail__creator">
+			<span class="article-detail__creator bold">{{entry.author}}</span>
+			|
+			{{entry.dateCreated|date('d/m/Y')}}
+		</p>
+
+		<div class="flex flex--between">
+			<h1 class="article-detail__title">{{entry.title}}</h1>
+
+			{% if entry.authorID == currentUser.id %}
+				{# <div class="dropdown">
+					<button onclick="dropdown()" class="article-detail__action dropdownBtn" type="button" id="dropbtn">
+						<img src="{{siteUrl}}/assets/resources/icons/dots.svg">
+					</button>
+					<div id="dropdownContent" class="dropdown-content">
+						<form>
+							<button type="submit" class="dropdown-item">Bewerken</button>
+						</form>
+						<form method="post" accept-charset="UTF-8">
+							{{ csrfInput() }}
+							{{ actionInput('craft\elements\actions\Delete') }}
+							{{ redirectInput('/dashboard') }}
+							{{ hiddenInput('sectionId', '4') }}
+							{{ hiddenInput('entryId', entry.id) }}
+							{{ hiddenInput('withDescendants', true) }}
+							<button type="submit" class="dropdown-item">Verwijderen</button>
+						</form>
+					</div>
+				</div> #}
+			{% endif %}
+		</div>
+
+		{# Checks if the entry the parent of the dossier #}
+		{% if entry.level == 1 %}
+			<div class="article-detail__theme-wrapper">
+				{% for theme in entry.articleThemes %}
+					<p class="article-detail__theme">{{theme.title}}</p>
+				{% endfor %}
+			</div>
+
+			<div class="article-detail__text">
+				{{entry.articleIntroduction}}
+			</div>
+		{% else %}
+			<div class="article-detail__text">
+				{{entry.articleRichtext}}
+			</div>
+		{% endif %}
+
+
+		{% if entry.level == 1 %}
+			{% if entry.authorID == currentUser.id %}
+				<div class="flex flex--between">
+					<h2 class="title title--flex">Pagina's</h2>
+					<a href="{{ siteUrl('sitebuilder/create', {parentId: entry.id}) }}" class="action__icon">
+						<img src="{{siteUrl}}/assets/resources/icons/plus.svg">
+					</a>
+				</div>
+			{% else %}
+				<h2 class="title">Pagina's</h2>
+			{% endif %}
+
+			{% if pages|length > 0 %}
+				<ul class="article-detail__navigation ">
+					{% for page in pages %}
+						{% include "_includes/components/page" %}
+					{% endfor %}
+				</ul>
+			{% else %}
+				<p>Er zijn nog geen pagina's toegevoegd aan dit dossier.</p>
+			{% endif %}
+		{% endif %}
+	</div>
+{% endblock %}

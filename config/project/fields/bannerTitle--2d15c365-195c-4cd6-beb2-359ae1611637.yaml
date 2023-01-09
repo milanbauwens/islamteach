@@ -1,0 +1,19 @@
+columnSuffix: estcdvzc
+contentColumnType: text
+fieldGroup: 9461779e-6e19-4a60-aa1d-3471bf2a5ed8 # Homepage
+handle: bannerTitle
+instructions: null
+name: 'Banner Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

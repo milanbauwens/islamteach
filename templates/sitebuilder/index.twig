@@ -1,0 +1,32 @@
+{% extends "_layouts/page" %}
+
+{% block content %}
+
+	{% set ownedArticles = craft.entries()
+		.section('dossiers')
+		.level(1)
+		.authorID(craft.app.user.id)
+		.all() 
+	%}
+
+	<div class="wrapper">
+
+		{% include "_includes/components/hero" %}
+
+		<div class="flex flex--between">
+			<h1 class="title title--flex">Mijn verdiepingsdossiers</h1>
+			<a href="{{siteUrl}}/sitebuilder/create" class="action__icon">
+				<img src="{{siteUrl}}/assets/resources/icons/plus.svg">
+			</a>
+		</div>
+
+		<div class="article__wrapper">
+			{% for article in ownedArticles %}
+
+				{% set image = article.articleThumbnail.one() %}
+
+				{% include "_includes/components/dossier" %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

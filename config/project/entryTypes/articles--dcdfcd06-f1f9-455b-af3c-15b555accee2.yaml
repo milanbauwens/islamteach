@@ -1,0 +1,133 @@
+fieldLayouts:
+  69daf2ea-d2fd-4065-9d51-9ee5e2ddb2a4:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 12c7567c-fff8-4820-8f3f-cd950bb9a316
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: aee9c1e6-ff9b-45da-9eba-90b7df262b1d # Article Thumbnail
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c3a1f520-80be-420a-8f28-d3e55b770236
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 15ae1483-0326-48e5-9394-53fb2634033e # Article Excerpt
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8830c67b-a2f5-41a6-9f0b-f30fe23b8274
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\elements\conditions\LevelConditionRule
+                  maxValue: ''
+                  operator: '='
+                  uid: 5a8d3b29-9168-45f2-bd68-2591d25be7b0
+                  value: '1'
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 035fede9-061b-4a1c-8935-6c5dbc4f85e9 # Article Introduction
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4045292d-57d3-4f77-a289-a6652b5f86b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\elements\conditions\LevelConditionRule
+                  maxValue: ''
+                  operator: '!='
+                  uid: 0d6b422b-54bf-4e68-95b6-f273c80782f4
+                  value: '1'
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 75256130-05a9-4bdb-a7d6-d8dd429c3271 # Article Richtext
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c1010871-234b-491e-94ae-261fcdc54375
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\elements\conditions\LevelConditionRule
+                  maxValue: ''
+                  operator: '='
+                  uid: b778bdd8-b039-4209-b5f1-6fb2be156856
+                  value: '1'
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 2f96dd37-227f-4569-a639-77faf69428ed # Article Themes
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d1c2f2ac-e2a2-43e6-b735-d9828e929577
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 10418c0b-6f42-48b1-adcb-7a574146b978
+        userCondition: null
+handle: articles
+hasTitleField: true
+name: Articles
+section: 6eece8c8-71a4-4945-83f3-b8992cf3bdbf # Dossiers
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

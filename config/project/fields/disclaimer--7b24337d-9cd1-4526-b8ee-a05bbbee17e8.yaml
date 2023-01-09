@@ -1,0 +1,19 @@
+columnSuffix: ycuoqabt
+contentColumnType: text
+fieldGroup: a4355144-2481-44b5-b722-7984c3f3171f # Globals
+handle: disclaimer
+instructions: null
+name: disclaimer
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

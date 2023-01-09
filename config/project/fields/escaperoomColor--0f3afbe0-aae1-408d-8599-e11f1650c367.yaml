@@ -1,0 +1,12 @@
+columnSuffix: iabyspto
+contentColumnType: string(7)
+fieldGroup: 85fb2919-24d5-4745-8c8d-3028b763cdbf # Escaperooms
+handle: escaperoomColor
+instructions: 'Pick a background color for your escaperoom'
+name: 'Escaperoom Color'
+searchable: false
+settings:
+  defaultColor: '#afded2'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

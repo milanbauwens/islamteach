@@ -1,0 +1,47 @@
+{% extends "_layouts/page" %}
+
+{% block content %}
+
+	{% set articles = craft.entries({section : 'dossiers'})
+        .relatedTo(category)
+		.level(1)
+        .all()
+	%}
+	{% set escaperooms = craft.entries({section: 'escaperooms'})
+		.relatedTo(category)
+		.all()
+	%}
+
+
+	<div class="wrapper">
+		<div class="mb-2">
+			<h1 class=" title">{{category.title}}</h1>
+		</div>
+
+		<h2 class="subtitle">Verdiepingsdossiers</h2>
+		<div class="escaperoom__wrapper">
+			{% if articles %}
+
+				{% for article in articles %}
+					{% set image = article.articleThumbnail.one() %}
+
+					{% include "_includes/components/dossier" %}
+				{% endfor %}
+			{% else %}
+				<p>Er zijn nog geen artikels in deze categorie</p>
+			{% endif %}
+
+		</div>
+		<h2 class="subtitle">Edu escaprooms</h2>
+		<div class="escaperoom__wrapper">
+			{% if escaperooms %}
+				{% for escaperoom in escaperooms %}
+					{% include "_includes/components/escaperoom" %}
+				{% endfor %}
+			{% else %}
+				<p>Er zijn nog geen escaperooms in deze categorie</p>
+			{% endif %}
+
+		</div>
+	</div>
+{% endblock %}

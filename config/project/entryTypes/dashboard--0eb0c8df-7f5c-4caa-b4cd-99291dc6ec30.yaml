@@ -1,0 +1,79 @@
+fieldLayouts:
+  c53cbe18-833d-4388-af92-72e5e81009d0:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e8c07c1f-b248-4b9a-83e0-44cb6b4091ee
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b13dc5d0-b379-4dbb-9991-8f51f7191b82
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2248829f-eb6a-4c54-951f-d7e5c4b263ab # Featured Articles
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 725f4f36-cf1c-4ecc-ba1d-8c51df0698b1
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Featured Articles'
+        uid: 1df98122-e0a7-4314-8952-03aa59229382
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 79ed6bc0-1345-4971-9bf1-0186b6e9b6ea # Featured Escaperooms
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bd648cd7-7cff-4ca8-bf70-1610a51a9f41
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Featured Escaperooms'
+        uid: c3105ad7-2f68-4833-9a72-900e424bdf4e
+        userCondition: null
+handle: dashboard
+hasTitleField: true
+name: Dashboard
+section: 607f48b6-ad44-48b9-8958-e669915f6b28 # Dashboard
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

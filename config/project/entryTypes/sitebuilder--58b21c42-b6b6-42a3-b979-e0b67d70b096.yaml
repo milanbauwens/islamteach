@@ -1,0 +1,109 @@
+fieldLayouts:
+  c6d0951a-f98e-41bd-a8c2-8ec8f03b8c6e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5a6b5344-3124-4c75-9775-5b1591c3334b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ccfbb662-6063-49bc-a9be-c80530d821e7
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2e425c6c-8c37-432c-afb0-0ca8d9340b99 # Hero Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 19f059d3-db5c-4fbf-94d4-0c478e447965
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f1d3b75-8672-45f5-81d8-9851a51d231b # Hero Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3a646122-12ba-4163-82cf-e43329b26b8c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a3f957c1-f962-4e93-bf0d-da2eee0dfc2f # Hero Call To Action
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d1d82b42-285a-407e-8cff-ef543f86be75
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 47a49d9f-937b-4580-acf6-55a66a1b2b2d # Hero Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1ff4bd62-36ae-4b30-b9bb-5f62d1f177d0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 65e48af9-3945-4dbc-bf45-3d30774d1a0a # Hero Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7637ff39-6401-48b7-b205-93aedce713e7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Hero
+        uid: 87dfb42a-f9ec-4dfa-8051-569830cb732e
+        userCondition: null
+handle: sitebuilder
+hasTitleField: true
+name: Sitebuilder
+section: 7055f77d-10b7-4f00-97d6-a05fa9b013ce # Sitebuilder
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

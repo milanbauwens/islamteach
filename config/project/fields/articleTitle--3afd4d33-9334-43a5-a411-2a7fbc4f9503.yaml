@@ -1,0 +1,19 @@
+columnSuffix: oreiujwq
+contentColumnType: text
+fieldGroup: 02105aa0-8215-4edd-b3ff-7127c0165675 # Dossiers
+handle: articleTitle
+instructions: null
+name: 'Article Title'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,23 @@
+{% extends "_layouts/base" %}
+
+{% block body %}
+
+	{% requireLogin %}
+
+	<div class="container--grey">
+		<div class="wrapper--image">
+
+			{% include "_includes/components/header" %}
+
+			{% include "_includes/components/searchbar" %}
+		</div>
+	</div>
+
+	{% block content %}{% endblock %}
+
+	<!-- Footer -->
+	<footer>
+		<p>{{ footer.disclaimer |raw }}</p>
+	</footer>
+
+{% endblock %}

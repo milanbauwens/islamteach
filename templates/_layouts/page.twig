@@ -1,0 +1,17 @@
+{% extends "_layouts/base" %}
+
+{% block body %}
+
+	<div class="wrapper">
+
+		{% include "_includes/components/header" %}
+	</div>
+
+
+	{% block content %}{% endblock %}
+
+	<!-- Footer -->
+	<footer>
+		<p>{{ footer.disclaimer |raw }}</p>
+	</footer>
+{% endblock %}

@@ -1,0 +1,25 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 85fb2919-24d5-4745-8c8d-3028b763cdbf # Escaperooms
+handle: escaperoomThemes
+instructions: null
+name: 'Escaperoom Themes'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: 4
+  localizeRelations: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: 'Add a theme'
+  showSiteMenu: true
+  source: 'group:aa37cc9c-6e1f-4bc4-96f8-4de66f06ac3f' # Themes
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

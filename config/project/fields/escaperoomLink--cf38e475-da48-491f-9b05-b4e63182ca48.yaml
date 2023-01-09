@@ -1,0 +1,14 @@
+columnSuffix: rnblbcpe
+contentColumnType: string(255)
+fieldGroup: 85fb2919-24d5-4745-8c8d-3028b763cdbf # Escaperooms
+handle: escaperoomLink
+instructions: 'The link to your Edu Escaperoom / Google Slide presentation'
+name: 'Escaperoom Link'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

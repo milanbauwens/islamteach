@@ -1,0 +1,25 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 02105aa0-8215-4edd-b3ff-7127c0165675 # Dossiers
+handle: articleThemes
+instructions: null
+name: 'Article Themes'
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: 3
+  localizeRelations: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: 'Add a theme'
+  showSiteMenu: true
+  source: 'group:aa37cc9c-6e1f-4bc4-96f8-4de66f06ac3f' # Themes
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

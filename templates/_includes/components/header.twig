@@ -1,0 +1,23 @@
+{% set menuItems = header.menu.all() %}
+
+<header>
+	<a href="/dashboard">
+		<h2 class="logo">IslamTeach</h2>
+	</a>
+	<nav class="nav">
+		{% for menuItem in menuItems %}
+			{% set destination = menuItem.entry.one() %}
+			{% set activeLink = 
+							(craft.app.request.segments|first == destination.uri
+							or 
+							craft.app.request.segments|first == false and destination.uri == '__home__') %}
+
+			<a href="{{ destination.url }}" class="nav__link  {{ activeLink ? 'nav__link--active' }}">{{ menuItem.label }}</a>
+		{% endfor %}
+
+		<a class="button button--secondary" href="/logout">
+			Log out</a>
+
+
+	</nav>
+</header>

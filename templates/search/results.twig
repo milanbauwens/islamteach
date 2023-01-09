@@ -1,0 +1,57 @@
+{% extends "_layouts/site" %}
+
+{% set searchQuery = craft.app.request.getParam('q') %}
+
+{% paginate craft.entries().search(searchQuery).limit(12) as pageInfo, pageEntries %}
+
+	{% block content %}
+		<div class="wrapper">
+			<h1 class="title">Zoekresultaten
+				{% if searchQuery != "" %}
+					<span class="results__count">{{pageEntries|length}}</span>
+				{% endif %}
+			</h1>
+
+			{% if pageEntries|length and searchQuery != "" %}
+				<div class="results__wrapper">
+					{% for article in pageEntries %}
+
+						{% set image = article.articleThumbnail.one() %}
+
+						{% include "_includes/components/dossier" %}
+
+					{% endfor %}
+				</div>
+
+
+				<nav class="pagination">
+					<div class="pagination__wrapper">
+
+						{% set pages = pageInfo.getDynamicRangeUrls(pageInfo.totalPages) %}
+						{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
+
+						{% if pages|length > 1 %}
+							{% for page in pages %}
+
+								{% if currentUrl == page %}
+
+									<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
+
+								{% else %}
+
+									<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
+
+								{% endif %}
+							{% endfor %}
+						{% endif %}
+					</div>
+				</nav>
+
+			{% else %}
+				<div class="search__error-container">
+					<img class="search__error-image" src="{{siteUrl}}assets/resources/images/no-results.svg">
+					<p class="search__error-text">Er zijn geen resultaten gevonden voor “{{ searchQuery }}“.</p>
+				</div>
+			{% endif %}
+		</div>
+	{% endblock %}

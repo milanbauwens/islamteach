@@ -1,0 +1,52 @@
+field: 84d8c7e8-1c51-4eb9-82a0-44975fae9eca # Escaperoom Themes
+fieldLayouts:
+  a9d49531-1503-413c-a696-9ab32fc813fd:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 36b0b369-e6c4-4a78-bed8-6174371eb4f6 # Theme
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c35f8dba-df42-408d-b877-33c002e166f1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 47305ab6-1bf9-49c6-8650-be897bd42798
+        userCondition: null
+fields:
+  36b0b369-e6c4-4a78-bed8-6174371eb4f6: # Theme
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: theme
+    instructions: null
+    name: Theme
+    searchable: false
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      allowSelfRelations: false
+      branchLimit: 4
+      localizeRelations: false
+      maxRelations: null
+      minRelations: null
+      selectionLabel: 'Add a theme'
+      showSiteMenu: false
+      source: 'group:aa37cc9c-6e1f-4bc4-96f8-4de66f06ac3f' # Themes
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+handle: themes
+name: Themes
+sortOrder: 1

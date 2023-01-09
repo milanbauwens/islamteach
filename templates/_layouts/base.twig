@@ -1,0 +1,32 @@
+{% block base %}
+
+	<!DOCTYPE html>
+	<html lang="nl-NL">
+		<head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+			<meta charset="utf-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+			<meta
+			name="referrer" content="origin-when-cross-origin"/>
+			{# <link rel="shortcut icon" href="{{ siteUrl }}assets/favicon.ico" type="image/x-icon"/> #}
+
+			<title>IslamTeach</title>
+
+			<link rel="stylesheet" href="{{siteUrl}}assets/css/reset.css">
+			<link rel="stylesheet" href="{{siteUrl}}assets/css/styles.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+		</head>
+		<body>
+			<main>
+
+				{% block body %}{% endblock %}
+
+			</main>
+
+			<script type="module" src="{{ siteUrl }}assets/js/tiny-slider.js"></script>
+			<script src="{{ siteUrl }}assets/js/app.js"></script>
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+		</body>
+	</html>
+{% endblock %}

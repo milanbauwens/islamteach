@@ -1,0 +1,11 @@
+{% set searchQuery = craft.app.request.getParam('q') %}
+
+<!-- Search -->
+<section class="search" style="background-image: url({{ siteUrl }}assets/resources/images/search.svg);">
+	<div class="search__container">
+		<form class="search__form" action="{{ url('search/results') }}">
+			<input class="input input--search" value="{{searchQuery}}" type="search" name="q" placeholder="Zoek dossiers, edu escaperooms...">
+			<button type="submit" class="button button--primary">Zoek</button>
+		</form>
+	</div>
+</section>

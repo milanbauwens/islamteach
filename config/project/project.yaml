@@ -1,0 +1,133 @@
+dateModified: 1673266405
+email:
+  fromEmail: milanbauwens70@gmail.com
+  fromName: ArabTeach
+  replyToEmail: null
+  template: ''
+  transportSettings:
+    encryptionMethod: none
+    host: localhost
+    password: ''
+    port: '1025'
+    timeout: '10'
+    useAuthentication: '0'
+    username: ''
+  transportType: craft\mail\transportadapters\Smtp
+fs:
+  assets:
+    hasUrls: false
+    name: Assets
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: null
+meta:
+  __names__:
+    0cf9ac8d-a36e-43b0-80a5-920ec30858fb: 'Menu Items' # Menu Items
+    0eb0c8df-7f5c-4caa-b4cd-99291dc6ec30: Dashboard # Dashboard
+    0f1d3b75-8672-45f5-81d8-9851a51d231b: 'Hero Description' # Hero Description
+    0f3afbe0-aae1-408d-8599-e11f1650c367: 'Escaperoom Color' # Escaperoom Color
+    1cc07613-bcbe-41a4-a746-e98bc2d3fd9a: ArabTeach # ArabTeach
+    1f6a459f-d3b8-4bc5-acde-d39bd05a6ccc: 'Set Password' # Set Password
+    1f14f5a2-dcb3-4a90-b600-09208646e887: 'Hero Link' # Hero Link
+    2d15c365-195c-4cd6-beb2-359ae1611637: 'Banner Title' # Banner Title
+    2e425c6c-8c37-432c-afb0-0ca8d9340b99: 'Hero Title' # Hero Title
+    2f96dd37-227f-4569-a639-77faf69428ed: 'Article Themes' # Article Themes
+    2f410cc1-025a-4d88-a336-e338f1800fd2: Home # Home
+    3ab2bb8a-1022-4573-80f1-dfab7b5688b7: Login # Login
+    3afd4d33-9334-43a5-a411-2a7fbc4f9503: 'Article Title' # Article Title
+    3c7f3529-7f31-4cad-ad38-81a487acec33: 'Set Password' # Set Password
+    3f211b29-4952-40e0-b81e-7303a27ef6fd: 'Hero Link Text' # Hero Link Text
+    4b59c426-8e44-4212-90b5-c323a9cdc382: 'Reset Password' # Reset Password
+    5dc46545-0de9-4d7d-94a5-311f7fdfbd44: Feature # Feature
+    05eb0cdd-f42b-4ba7-927f-12cb6c1b93de: Icon # Icon
+    6ae17521-f24d-4495-bf2c-5f87ff415140: 'Reset Password' # Reset Password
+    6eece8c8-71a4-4945-83f3-b8992cf3bdbf: Dossiers # Dossiers
+    7b2e6106-4aa7-4f01-a323-899d2be9b3b7: Themes # Themes
+    7b32d833-67b6-40bd-8b01-fc33f07acdea: Icon # Icon
+    7b4823ed-36d1-4b74-a926-b3e803de5a45: Label # Label
+    7b24337d-9cd1-4526-b8ee-a05bbbee17e8: disclaimer # disclaimer
+    8a46cef0-d86e-40fa-ab69-317431fce475: 'Banner Description' # Banner Description
+    8b35c479-2253-408a-87a7-d6ef50b7298e: Description # Description
+    9f21345c-536f-4343-b4ba-766b6b87e5cf: 'Dossier Overview' # Dossier Overview
+    15ae1483-0326-48e5-9394-53fb2634033e: 'Article Excerpt' # Article Excerpt
+    035fede9-061b-4a1c-8935-6c5dbc4f85e9: 'Article Introduction' # Article Introduction
+    36b0b369-e6c4-4a78-bed8-6174371eb4f6: Theme # Theme
+    47a49d9f-937b-4580-acf6-55a66a1b2b2d: 'Hero Image' # Hero Image
+    51ba1b21-6a68-4d84-bd23-ef02afba2f94: Escaperoom # Escaperoom
+    58b21c42-b6b6-42a3-b979-e0b67d70b096: Sitebuilder # Sitebuilder
+    65e48af9-3945-4dbc-bf45-3d30774d1a0a: 'Hero Link' # Hero Link
+    79ed6bc0-1345-4971-9bf1-0186b6e9b6ea: 'Featured Escaperooms' # Featured Escaperooms
+    82c9c5ad-1a17-4b11-9c5d-af0c0ab3aafa: 'Escaperoom Overview' # Escaperoom Overview
+    84d8c7e8-1c51-4eb9-82a0-44975fae9eca: 'Escaperoom Themes' # Escaperoom Themes
+    85a50ef0-e635-4d2f-a22e-070a8b1a503c: 'Theme Icon' # Theme Icon
+    85fb2919-24d5-4745-8c8d-3028b763cdbf: Escaperooms # Escaperooms
+    141bcad9-4312-4342-bd41-531628be34ca: Login # Login
+    0157bddf-9fa1-4116-95d0-dcf4ef8476bf: Entry # Entry
+    594d2a0f-9ad0-4de3-a713-770bb8614cbb: ArabTeach # ArabTeach
+    607f48b6-ad44-48b9-8958-e669915f6b28: Dashboard # Dashboard
+    660b115f-cacb-4933-950d-704cb3d9732d: 'Banner Image' # Banner Image
+    839aab1c-fc49-4acf-be8b-20018c1b138a: 'Hero Link Url' # Hero Link Url
+    931f3411-3c8e-4d4e-bec1-544a33289596: Home # Home
+    02105aa0-8215-4edd-b3ff-7127c0165675: Dossiers # Dossiers
+    2338e244-2c06-4551-b7af-8dcb7a0350b3: 'Escaperoom Explanation ' # Escaperoom Explanation 
+    4638a363-ab2d-4ef4-b573-21cbcabf62f7: Escaperooms # Escaperooms
+    4777e61a-d332-4b9c-96e2-e4c0a35af076: Description # Description
+    7055f77d-10b7-4f00-97d6-a05fa9b013ce: Sitebuilder # Sitebuilder
+    74429bd1-36e8-4881-8621-1573ea3e3fdc: Title # Title
+    2248829f-eb6a-4c54-951f-d7e5c4b263ab: 'Featured Articles' # Featured Articles
+    3409595f-1bb2-411a-8d8f-15031820fb62: Label # Label
+    9461779e-6e19-4a60-aa1d-3471bf2a5ed8: Homepage # Homepage
+    9524199c-510f-4a96-871c-20643545a6f4: Administrators # Administrators
+    34612708-31bc-48ec-b979-dbaf0a32ee2c: Common # Common
+    65916778-9e99-450d-9b03-c1d0f5731958: Themes # Themes
+    75256130-05a9-4bdb-a7d6-d8dd429c3271: 'Article Richtext' # Article Richtext
+    a1f9808d-c4a1-4435-816c-adf84ca258be: 'Escaperoom Overview' # Escaperoom Overview
+    a3f957c1-f962-4e93-bf0d-da2eee0dfc2f: 'Hero Call To Action' # Hero Call To Action
+    a5c3c182-512e-449c-b4db-5da4ac6efb65: 'Featured Articles' # Featured Articles
+    a6ed2918-1651-450f-a678-2433a1423efd: Header # Header
+    a8dbc7df-9a6f-4c95-a714-2b311f7d7065: Page # Page
+    a9f8cd7f-5cfe-4c94-8055-9fdd73c3c08f: Uploads # Uploads
+    a4355144-2481-44b5-b722-7984c3f3171f: Globals # Globals
+    aa37cc9c-6e1f-4bc4-96f8-4de66f06ac3f: Themes # Themes
+    aee9c1e6-ff9b-45da-9eba-90b7df262b1d: 'Article Thumbnail' # Article Thumbnail
+    b1d09ac0-ac13-4acf-a2ca-828b011e197c: Students # Students
+    b5dcd831-deea-4899-97ed-cc404bfe05c4: Readers # Readers
+    b7acd107-9e81-4b5d-a429-ab01a2f2f077: Menu # Menu
+    b142b030-eac4-4ae3-8b2c-75cb0753e1a3: 'Page Content' # Page Content
+    b136211e-f202-42bf-8081-446c91bbaadb: Entry # Entry
+    c4951e7d-1b7c-4479-8a20-010c3cba7733: 'Public Schema' # Public Schema
+    cbe1981c-ede1-4447-9902-d958bacbfea7: Footer # Footer
+    cf38e475-da48-491f-9b05-b4e63182ca48: 'Escaperoom Link' # Escaperoom Link
+    dcdfcd06-f1f9-455b-af3c-15b555accee2: Articles # Articles
+    deb9e3e5-e686-4874-aa1c-c6e27c51ae74: 'Dossier Overview' # Dossier Overview
+    f3455c98-6520-43ce-a2ac-1683fd9f14cf: Features # Features
+    f5441312-de4f-4037-9c77-a57cfc7e721e: 'Article Entry' # Article Entry
+    fc96ec64-9d30-4e42-b044-d15260b60651: 'Page Title' # Page Title
+plugins:
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      allowAttachments: false
+      allowedMessageFields: null
+      prependSender: 'IslamTeach - Aanvraag tot toegang'
+      prependSubject: 'Er is een nieuwe aanvraag tot toegang voor IslamTeach'
+      successFlashMessage: 'Bericht verstuurd!'
+      toEmail: milanbauwens70@gmail.com
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: pro
+  live: true
+  name: ArabTeach
+  retryDuration: null
+  schemaVersion: 4.0.0.9
+  timeZone: Europe/Brussels

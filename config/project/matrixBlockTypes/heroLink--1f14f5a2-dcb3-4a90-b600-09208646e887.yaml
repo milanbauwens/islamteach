@@ -1,0 +1,73 @@
+field: 65e48af9-3945-4dbc-bf45-3d30774d1a0a # Hero Link
+fieldLayouts:
+  e937c603-6e1f-40d2-97d0-7c85cde8bb7a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3f211b29-4952-40e0-b81e-7303a27ef6fd # Hero Link Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a068f2f-7139-4b0e-892d-b3027a815b72
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 839aab1c-fc49-4acf-be8b-20018c1b138a # Hero Link Url
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8c845896-2e1c-467f-9a93-86fdeceb695f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a17a7539-4ab0-4b6a-b905-175955228c01
+        userCondition: null
+fields:
+  3f211b29-4952-40e0-b81e-7303a27ef6fd: # Hero Link Text
+    columnSuffix: cjwvuxny
+    contentColumnType: string(200)
+    fieldGroup: null
+    handle: heroLinkText
+    instructions: null
+    name: 'Hero Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 50
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  839aab1c-fc49-4acf-be8b-20018c1b138a: # Hero Link Url
+    columnSuffix: zevtoagw
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: heroLinkUrl
+    instructions: null
+    name: 'Hero Link Url'
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: heroLink
+name: 'Hero Link'
+sortOrder: 1

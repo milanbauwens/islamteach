@@ -1,0 +1,35 @@
+{% extends "_layouts/page" %}
+{% block content %}
+	{% set embedLink = entry.escaperoomLink|replace("edit", "embed") %}
+
+	<div class="wrapper--small">
+		<ul class="breadcrumbs">
+			<li class="breadcrumbs__link">
+				<a href="{{siteUrl}}/dashboard">Overzicht</a>
+			</li>
+			<img src="{{siteUrl}}/assets/resources/icons/chevron_right.svg" alt="arrow">
+			<li class="breadcrumbs__link active">
+				{{ entry.title|striptags|length > 30 ? entry.title|striptags|slice(0, 30) ~ '...' : entry.title|striptags }}
+			</li>
+		</ul>
+
+		<p class="article-detail__creator">
+			<span class="article-detail__creator bold">{{entry.author}}</span>
+			|
+			{{entry.dateCreated|date('d/m/Y')}}
+		</p>
+
+		<h1 class="article-detail__title">{{entry.title}}</h1>
+		<div class="article-detail__theme-wrapper">
+			{% for theme in entry.escaperoomThemes %}
+				<p class="article-detail__theme">{{theme.title}}</p>
+			{% endfor %}
+		</div>
+		<div class="article-detail__text">
+			{{entry.escaperoomExplanation}}
+		</div>
+
+		<iframe src="{{embedLink}}" loading="lazy" frameborder="0" width="100%" height="486" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+	</div>
+{% endblock %}

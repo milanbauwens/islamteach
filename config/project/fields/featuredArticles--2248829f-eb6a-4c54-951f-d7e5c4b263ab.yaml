@@ -1,0 +1,54 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 02105aa0-8215-4edd-b3ff-7127c0165675 # Dossiers
+handle: featuredArticles
+instructions: null
+name: 'Featured Articles'
+searchable: false
+settings:
+  allowSelfRelations: false
+  localizeRelations: false
+  maxRelations: 6
+  minRelations: null
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Entry
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\entries\EntryCondition
+      -
+        - conditionRules
+        -
+          -
+            __assoc__:
+              -
+                - class
+                - craft\elements\conditions\LevelConditionRule
+              -
+                - uid
+                - b8d5399a-b401-4f8b-ab64-d8bdcd810d01
+              -
+                - operator
+                - '='
+              -
+                - value
+                - '1'
+              -
+                - maxValue
+                - ''
+  selectionLabel: 'Add a dossier'
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:6eece8c8-71a4-4945-83f3-b8992cf3bdbf' # Dossiers
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

@@ -1,0 +1,21 @@
+<!-- Features -->
+<section class="feature__wrapper">
+
+	{% for feature in entry.features %}
+
+		{% set icon = feature.featureIcon.one() %}
+
+		<div class="feature">
+			<div class="feature__icon-container">
+				<img class="feature__icon" src="{{siteUrl}}/uploads/{{ icon.url }}" alt="{{ icon.alt }}">
+			</div>
+			<h3 class="feature__title">
+				{{ feature.featureTitle }}
+			</h3>
+			<p class="feature__text">
+				{{ feature.featureDescription }}</p>
+		</div>
+
+	{% endfor %}
+
+</section>

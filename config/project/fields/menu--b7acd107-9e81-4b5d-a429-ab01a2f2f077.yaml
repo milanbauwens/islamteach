@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: a4355144-2481-44b5-b722-7984c3f3171f # Globals
+handle: menu
+instructions: null
+name: Menu
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_menu}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

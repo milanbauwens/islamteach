@@ -1,0 +1,24 @@
+fieldLayouts:
+  ea642fdc-63da-45d1-8391-a33a593edd2d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: b7acd107-9e81-4b5d-a429-ab01a2f2f077 # Menu
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7d2d7855-0f36-45cc-9163-8c9b5ad1af31
+            userCondition: null
+            warning: null
+            width: 100
+        name: Navigation
+        uid: 5966d9c4-6e12-40a3-81ef-8fc881bc2027
+        userCondition: null
+handle: header
+name: Header
+sortOrder: 2

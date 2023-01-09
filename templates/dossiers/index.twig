@@ -1,0 +1,21 @@
+{% extends "_layouts/site" %}
+
+{% block content %}
+	{% set articles = craft.entries.section('dossiers').hasDescendants().all() %}
+
+	<div class="wrapper">
+		<div class="mb-2">
+			<h1 class="title title--flex">Alle verdiepingsdossiers
+				<span class="results__count">{{articles|length}}</span>
+			</h1>
+		</div>
+		<div class="article__wrapper">
+			{% for article in articles %}
+
+				{% set image = article.articleThumbnail.one() %}
+
+				{% include "_includes/components/dossier" %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

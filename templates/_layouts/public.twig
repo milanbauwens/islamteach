@@ -1,0 +1,25 @@
+{% extends "_layouts/base" %}
+
+{% block body %}
+
+	<div
+		class="wrapper">
+
+		<!-- Header -->
+		<header>
+			<a href="/">
+				<h2 class="logo">IslamTeach</h2>
+			</a>
+			<nav class="nav">
+				<a class="button button--primary" href="login">
+					Log in</a>
+			</nav>
+		</header>
+
+		{% block content %}{% endblock %}
+
+		<!-- Footer -->
+		<footer>
+			<p>{{ footer.disclaimer |raw }}</p>
+		</footer>
+	{% endblock %}

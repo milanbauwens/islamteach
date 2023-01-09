@@ -1,0 +1,19 @@
+{% extends "_layouts/site" %}
+
+{% block content %}
+	{% set escaperooms = craft.entries.section('escaperooms').all() %}
+
+	<div class="wrapper">
+		<div class="mb-2">
+			<h1 class="title title--flex">Alle Edu escaprooms
+				<span class="results__count">{{escaperooms|length}}</span>
+			</h1>
+		</div>
+		<div class="escaperoom__wrapper">
+			{% for escaperoom in escaperooms %}
+
+				{% include "_includes/components/escaperoom" %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

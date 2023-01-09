@@ -1,0 +1,59 @@
+{% set currentUrl = craft.app.request.url %}
+
+<!-- Hero -->
+<section class="hero">
+	<div class="hero__content">
+		<h1 class="hero__title">
+			{{ entry.heroTitle }}</h1>
+		<p class="hero__text">
+			{{ entry.heroDescription }}
+		</p>
+		<p class="hero__text">
+			{{ entry.heroCallToAction }}
+		</p>
+
+
+		{% if currentUrl == "/" %}
+			<form method="post" class="hero__form">
+				{{ csrfInput() }}
+				{{ actionInput('contact-form/send') }}
+
+
+				{{ input('E-mail', 'fromEmail', submission.fromEmail ?? '', {
+        		id: 'from-email',
+    			autocomplete: 'email',
+				class: 'input input--hero',
+				placeholder: 'Vul je email in',
+    		}) }}
+
+				{{ tag('textarea', {
+				text: 'Iemand heeft een aanvraag ingediend om toegang te krijgen tot het platform. Ga naar het dashboard om de aanvraag te beoordelen en de gebruiker toegang te geven.',
+				id: 'message',
+				name: 'message',
+				class: 'hidden',
+			}) }}
+
+				<button type="submit" class="button button--primary">Verstuur</button>
+			</form>
+
+			{% if craft.app.session.hasFlash('notice') %}
+				<p class="success">{{ craft.app.session.getFlash('notice') }}</p>
+			{% elseif craft.app.session.hasFlash('error') %}
+				<p class="error">{{ craft.app.session.getFlash('error') }}</p>
+			{% endif %}
+
+		{% else %}
+			{% set action = entry.heroLink.one() %}
+			<div class="hero__action">
+				<a href="{{ action.heroLinkUrl }}" class="button button--primary">{{ action.heroLinkText }}</a>
+			</div>
+		{% endif %}
+
+	</div>
+
+	<div class="hero__container">
+		{% set image = entry.heroImage.one() %}
+
+		<img class="hero__image" src="{{siteUrl}}/uploads/{{ image.url }}" alt="hero">
+	</div>
+</section>

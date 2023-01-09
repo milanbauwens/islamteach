@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: dossiers
+name: Dossiers
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  1cc07613-bcbe-41a4-a746-e98bc2d3fd9a: # ArabTeach
+    enabledByDefault: true
+    hasUrls: true
+    template: dossiers/_entry.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: 2
+  uid: 7bece2f9-dafd-46a5-bd11-0b7a66de580a
+type: structure

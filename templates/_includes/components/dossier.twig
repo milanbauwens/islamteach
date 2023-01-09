@@ -1,0 +1,22 @@
+<a href="{{article.url}}" class="article">
+	<div class="article__visual">
+		<img class="article__image" src="{{siteUrl}}uploads/{{ image.url }}">
+		<div class="article__themes">
+			{% for theme in article.articleThemes %}
+				{% set icon = theme.themeIcon.one() %}
+				<img class="article__theme" src="{{siteUrl}}uploads/{{icon.url}}">
+			{% endfor %}
+		</div>
+	</div>
+	<div class="article__content">
+		<h3 class="article__title">{{article.title}}</h3>
+		<p class="article__excerpt">
+			{{ article.articleExcerpt|striptags|length > 100 ? article.articleExcerpt|striptags|slice(0, 100) ~ '...' : article.articleExcerpt|striptags }}
+		</p>
+		<p class="article__info">
+			<span class="article__info bold">{{article.author}}</span>
+			|
+			{{article.dateCreated|date('d/m/Y')}}
+		</p>
+	</div>
+</a>

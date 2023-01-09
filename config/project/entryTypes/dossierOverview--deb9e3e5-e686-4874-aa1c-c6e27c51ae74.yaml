@@ -1,0 +1,43 @@
+fieldLayouts:
+  fdc5bab1-3fdf-48a7-9afd-ec4997e789bb:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: cd7d3eef-38bf-46d4-bd28-68397b015a65
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9d405f4a-2088-416b-a800-3c0ecee6535a
+        userCondition: null
+handle: dossierOverview
+hasTitleField: false
+name: 'Dossier Overview'
+section: 9f21345c-536f-4343-b4ba-766b6b87e5cf # Dossier Overview
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

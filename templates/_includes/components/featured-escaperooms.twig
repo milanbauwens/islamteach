@@ -1,0 +1,8 @@
+<!-- Featured Edu Escaperooms -->
+<section class="escaperooms">
+	<h1 class="title">Escaperooms van de week</h1>
+	<div class="escaperoom__wrapper">
+		{% for escaperoom in featuredEscaperooms %}
+			{% include "_includes/components/escaperoom" %}
+		{% endfor %}
+</div></section>

@@ -1,0 +1,107 @@
+{% extends "_layouts/page" %}
+
+{% block content %}
+
+	<div class="wrapper--small">
+
+		{% set entry = entry ?? create('craft\\elements\\Entry') %}
+		{% set themes = craft.categories.all() %}
+		{% set new = entry.id is null %}
+		{% set parentId = craft.app.request.getParam('parentId') %}
+		{% set parentEntry = craft.entries.id(parentId).one() %}
+		{% set parentSlug = parentEntry.slug %}
+
+		<div class="mb-2">
+			{% if parentId %}
+				<h1 class="title">{{ new ? 'Maak een nieuwe pagina' : 'Bewerk pagina' }}</h1>
+			{% else %}
+				<h1 class="title">{{ new ? 'Maak een nieuw verdiepingsdossier' : 'Bewerk verdiepingsdossier' }}</h1>
+			{% endif %}
+		</div>
+		<div>
+			<form class="form" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+				{{ csrfInput() }}
+				{{ actionInput('entries/save-entry') }}
+				{% if parentId %}
+					{{ redirectInput(parentSlug ~ '/{slug}')}}
+				{% else %}
+					{{ redirectInput( '/{slug}')}}
+				{% endif %}
+				{{ hiddenInput('entryId', entry.id) }}
+				{{ hiddenInput('sectionId', '4') }}
+				{% if parentId %}
+					{{ hiddenInput('parentId', parentId) }}
+				{% endif %}
+				{{ hiddenInput('enabled', '1') }}
+
+				<div class="formgroup">
+					<label for="title">Titel</label>
+					{{ input('text', 'title', '', {
+                        id: 'title',
+                        required: true,
+                    }) }}
+				</div>
+
+				<div class="formgroup">
+					<label for="articleThumbnail">Thumbnail</label>
+					<div id="imgPreview"></div>
+					{{ input('file', 'fields[articleThumbnail][]', options={
+ 					multiple: false,
+                    id: 'articleThumbnail',
+                    required: true,
+			    }) }}
+				</div>
+
+				{% if parentId == false %}
+					<label>Thema's</label>
+					<div class="formgroup formgroup--flex">
+						{% for theme in themes %}
+							<input class="checkbox" type="checkbox" name="fields[articleThemes][]" id="{{theme.id}}" value="{{theme.id}}" {{ (not new and entry.theme.one().id == theme.id) ? 'checked' : ''}}>
+							<label class="checkbox__label" for="{{theme.id}}">{{theme.title}}</label>
+						{% endfor %}
+					</div>
+				{% endif %}
+
+				<div class="formgroup">
+					<label for=" articleExcerpt">Korte beschrijving</label>
+					{{ tag('textarea', {
+                        id: 'articleExcerpt',
+                        name: 'fields[articleExcerpt]',
+                        text: entry.articleExcerpt,
+                        required: true,
+                    })
+                }}
+				</div>
+
+				{% if parentId %}
+					<div class="formgroup">
+						<label for="articleRichtext">Inhoud</label>
+						{{ tag('textarea', {
+                    id: 'articleRichtext',
+                    name: 'fields[articleRichtext]',
+					class: 'editor',
+                    text: entry.articleRichtext,
+                    required: true,
+                }) }}
+					</div>
+				{% endif %}
+
+
+				{% if parentId == false %}
+					<div class="formgroup">
+						<label for="articleIntroduction">Dossier introductie</label>
+						{{ tag('textarea', {
+                    id: 'articleIntroduction',
+                    name: 'fields[articleIntroduction]',
+					class: 'editor',
+                    text: entry.articleIntroduction,
+                    required: true,
+                }) }}
+					</div>
+				{% endif %}
+
+				<button class="button button--primary" type="submit">{{ parentId ? 'Maak pagina' : 'Maak dossier'}}</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

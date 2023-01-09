@@ -1,0 +1,91 @@
+fieldLayouts:
+  1f6d4de2-f4f4-4dea-9ddc-429bb6bfbaf0:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c92e3538-3216-4554-b7c2-6ef9f538580d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f3afbe0-aae1-408d-8599-e11f1650c367 # Escaperoom Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 38639e85-3d3e-44be-9ac9-17fec347d894
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2338e244-2c06-4551-b7af-8dcb7a0350b3 # Escaperoom Explanation 
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b78d88a6-385e-4dfa-802c-99158aa3e19c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cf38e475-da48-491f-9b05-b4e63182ca48 # Escaperoom Link
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 35e070cb-c59a-448f-b41a-024f6c7a7034
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 84d8c7e8-1c51-4eb9-82a0-44975fae9eca # Escaperoom Themes
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 712d218a-300b-4bff-b3af-ddcd6573b4d4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e7638ac1-01af-46cf-8310-42f41200c5c6
+        userCondition: null
+handle: escaperoom
+hasTitleField: true
+name: Escaperoom
+section: 4638a363-ab2d-4ef4-b573-21cbcabf62f7 # Escaperooms
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

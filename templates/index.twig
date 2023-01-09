@@ -1,0 +1,34 @@
+{% extends "_layouts/base" %}
+
+{% block body %}
+
+	<body>
+		<main>
+			<div
+				class="wrapper">
+				<!-- Header -->
+				<header>
+					<a href="/">
+						<h2 class="logo">IslamTeach</h2>
+						<!-- <img src="assets/images/logo.png" alt="logo"> -->
+					</a>
+					<nav class="nav">
+						<a class="button button--primary" href="/login">
+							Log in</a>
+					</nav>
+				</header>
+
+				{% block content %}{% endblock %}
+
+				<!-- Footer -->
+				<footer>
+					<p>{{ footer.disclaimer |raw }}</p>
+				</footer>
+
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+				<script type="module" src="{{ siteUrl }}assets/js/app.js"></script>
+			</main>
+		</body>
+
+	{% endblock %}
+</body>

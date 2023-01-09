@@ -1,0 +1,12 @@
+description: ''
+handle: readers
+name: Readers
+permissions:
+  - 'viewassets:a9f8cd7f-5cfe-4c94-8055-9fdd73c3c08f' # Uploads
+  - 'viewcategories:aa37cc9c-6e1f-4bc4-96f8-4de66f06ac3f' # Themes
+  - 'viewentries:3ab2bb8a-1022-4573-80f1-dfab7b5688b7' # Login
+  - 'viewentries:3c7f3529-7f31-4cad-ad38-81a487acec33' # Set Password
+  - 'viewentries:4b59c426-8e44-4212-90b5-c323a9cdc382' # Reset Password
+  - 'viewentries:607f48b6-ad44-48b9-8958-e669915f6b28' # Dashboard
+  - 'viewentries:6eece8c8-71a4-4945-83f3-b8992cf3bdbf' # Dossiers
+  - 'viewentries:931f3411-3c8e-4d4e-bec1-544a33289596' # Home

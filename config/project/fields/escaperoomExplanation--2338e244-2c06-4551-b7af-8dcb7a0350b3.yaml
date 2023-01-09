@@ -1,0 +1,19 @@
+columnSuffix: rejfekwe
+contentColumnType: text
+fieldGroup: 85fb2919-24d5-4745-8c8d-3028b763cdbf # Escaperooms
+handle: escaperoomExplanation
+instructions: null
+name: 'Escaperoom Explanation '
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

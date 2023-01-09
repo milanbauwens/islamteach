@@ -1,0 +1,157 @@
+fieldLayouts:
+  aab51955-f402-473c-8621-86edc9c88a62:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 474f9396-41d3-480f-a91c-db7552f8092c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d3db3212-4d68-4d76-8374-ab7aafb889ae
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2e425c6c-8c37-432c-afb0-0ca8d9340b99 # Hero Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 07296224-a15f-421b-b5d7-e6d316e34c0f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0f1d3b75-8672-45f5-81d8-9851a51d231b # Hero Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 553ab1cc-3f0a-4c1e-a77b-7ff029e0c3df
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a3f957c1-f962-4e93-bf0d-da2eee0dfc2f # Hero Call To Action
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 88e536e8-573e-4851-bbd5-34af3a307664
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 47a49d9f-937b-4580-acf6-55a66a1b2b2d # Hero Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d52f78ee-1c15-456b-a745-e0482ef51881
+            userCondition: null
+            warning: null
+            width: 100
+        name: Hero
+        uid: 675bd1f5-4792-4f36-a9cb-39357e276f9e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: f3455c98-6520-43ce-a2ac-1683fd9f14cf # Features
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c8fa4f39-e301-477b-b573-c3355a99a636
+            userCondition: null
+            warning: null
+            width: 100
+        name: Features
+        uid: 02fc913d-e574-4a70-94bc-7dc8c85ed01e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2d15c365-195c-4cd6-beb2-359ae1611637 # Banner Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 354fa866-66b0-44ed-86eb-2b8255c1da9d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8a46cef0-d86e-40fa-ab69-317431fce475 # Banner Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e63eb5d5-b47d-408c-9429-eb06a8e954f3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 660b115f-cacb-4933-950d-704cb3d9732d # Banner Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1e79eec5-cefc-4a18-bcb1-49eb78cdceda
+            userCondition: null
+            warning: null
+            width: 100
+        name: Banner
+        uid: 62a34289-d084-4b42-a153-0f42df0cd934
+        userCondition: null
+handle: home
+hasTitleField: false
+name: Home
+section: 931f3411-3c8e-4d4e-bec1-544a33289596 # Home
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,81 @@
+field: 2248829f-eb6a-4c54-951f-d7e5c4b263ab # Featured Articles
+fieldLayouts:
+  5f90b0e8-e3b2-4f68-8675-44c393332293:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: f5441312-de4f-4037-9c77-a57cfc7e721e # Article Entry
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9e876678-3552-4d98-b76f-c1d919b0ea44
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 3278bb9e-b118-47ab-86bd-194619713408
+        userCondition: null
+fields:
+  f5441312-de4f-4037-9c77-a57cfc7e721e: # Article Entry
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: articleEntry
+    instructions: null
+    name: 'Article Entry'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      localizeRelations: false
+      maxRelations: 6
+      minRelations: null
+      selectionCondition:
+        __assoc__:
+          -
+            - elementType
+            - craft\elements\Entry
+          -
+            - fieldContext
+            - global
+          -
+            - class
+            - craft\elements\conditions\entries\EntryCondition
+          -
+            - conditionRules
+            -
+              -
+                __assoc__:
+                  -
+                    - class
+                    - craft\elements\conditions\LevelConditionRule
+                  -
+                    - uid
+                    - 5e0a2088-7f5f-4668-8333-971ccbd5f425
+                  -
+                    - operator
+                    - '='
+                  -
+                    - value
+                    - '1'
+                  -
+                    - maxValue
+                    - ''
+      selectionLabel: 'Add article'
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:6eece8c8-71a4-4945-83f3-b8992cf3bdbf' # Dossiers
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: featuredArticles
+name: 'Featured Articles'
+sortOrder: 1
