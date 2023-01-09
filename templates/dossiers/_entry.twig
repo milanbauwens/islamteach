@@ -73,7 +73,7 @@
 			</div>
 		{% else %}
 			<div class="article-detail__text">
-				{{entry.articleRichtext}}
+				{{entry.articleRichtext|replace("'<p>Powered by <a href="https://www.froala.com/wysiwyg-editor?pb=1" title="Froala Editor">Froala Editor</a></p>", "")|purify|nl2br }}
 			</div>
 		{% endif %}
 
