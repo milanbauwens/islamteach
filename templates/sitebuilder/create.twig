@@ -27,7 +27,7 @@
 				{% if parentId != null %}
 					{{ redirectInput(parentSlug ~ '/{slug}')}}
 				{% else %}
-					{{ redirectInput( siteUrl ~'/{slug}')}}
+					{{ redirectInput( siteUrl ~ '/{slug}')}}
 				{% endif %}
 				{{ hiddenInput('entryId', entry.id) }}
 				{{ hiddenInput('sectionId', '4') }}

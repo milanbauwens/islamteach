@@ -2,56 +2,97 @@
 
 {% set searchQuery = craft.app.request.getParam('q') %}
 
-{% paginate craft.entries().search(searchQuery).limit(12) as pageInfo, pageEntries %}
+{% paginate craft.entries({
+	section: 'dossiers',
+	search: searchQuery,
+	limit: 12,
+}) as pageInfoDossiers, pageDossiers %}
 
-	{% block content %}
-		<div class="wrapper">
-			<h1 class="title">Zoekresultaten
-				{% if searchQuery != "" %}
-					<span class="results__count">{{pageEntries|length}}</span>
-				{% endif %}
-			</h1>
+	{% paginate craft.entries({
+	section: 'escaperooms',
+	search: searchQuery,
+	limit: 12,
+}) as pageInfoEscaperooms, pageEscaperooms %}
 
-			{% if pageEntries|length and searchQuery != "" %}
-				<div class="results__wrapper">
-					{% for article in pageEntries %}
+		{% block content %}
+			<div class="wrapper">
+				{% if (pageDossiers|length != 0 or pageEscaperooms|length != 0) and searchQuery != "" %}
 
-						{% set image = article.articleThumbnail.one() %}
+					<h1 class="title">Zoekresultaten voor "{{searchQuery}}"</h1>
 
-						{% include "_includes/components/dossier" %}
+					{% if pageDossiers|length != 0 %}
+						<h2 class="subtitle">Verdiepingsdossiers</h2>
+						<div class="results__wrapper">
+							{% for article in pageDossiers %}
+								{% set image = article.articleThumbnail.one() %}
 
-					{% endfor %}
-				</div>
-
-
-				<nav class="pagination">
-					<div class="pagination__wrapper">
-
-						{% set pages = pageInfo.getDynamicRangeUrls(pageInfo.totalPages) %}
-						{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
-
-						{% if pages|length > 1 %}
-							{% for page in pages %}
-
-								{% if currentUrl == page %}
-
-									<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
-
-								{% else %}
-
-									<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
-
-								{% endif %}
+								{% include "_includes/components/dossier" %}
 							{% endfor %}
-						{% endif %}
-					</div>
-				</nav>
+						</div>
 
-			{% else %}
-				<div class="search__error-container">
-					<img class="search__error-image" src="{{siteUrl}}assets/resources/images/no-results.svg">
-					<p class="search__error-text">Er zijn geen resultaten gevonden voor “{{ searchQuery }}“.</p>
-				</div>
-			{% endif %}
-		</div>
-	{% endblock %}
+						<nav class="pagination">
+							<div class="pagination__wrapper">
+
+								{% set dossierPages = pageInfoDossiers.getDynamicRangeUrls(pageInfoDossiers.totalPages) %}
+								{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
+
+								{% if dossierPages|length > 1 %}
+									{% for page in dossierPages %}
+
+										{% if currentUrl == page %}
+
+											<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
+
+										{% else %}
+
+											<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
+
+										{% endif %}
+									{% endfor %}
+								{% endif %}
+							</div>
+						</nav>
+					{% endif %}
+
+					{% if pageEscaperooms|length != 0 %}
+						<h2 class="subtitle">Escaperooms</h2>
+						<div class="results__wrapper">
+							{% for escaperoom in pageEscaperooms %}
+								{% include "_includes/components/escaperoom" %}
+							{% endfor %}
+						</div>
+
+
+						<nav class="pagination">
+							<div class="pagination__wrapper">
+
+								{% set escaperoomPages = pageInfoEscaperooms.getDynamicRangeUrls(pageInfoEscaperooms.totalPages) %}
+								{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
+
+								{% if escaperoomPages|length > 1 %}
+									{% for page in escaperoomPages %}
+
+										{% if currentUrl == page %}
+
+											<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
+
+										{% else %}
+
+											<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
+
+										{% endif %}
+									{% endfor %}
+								{% endif %}
+							</div>
+						</nav>
+					{% endif %}
+				{% else %}
+					<section class="error__wrapper">
+						<h1 class="title">Je zoekopdracht heeft geen resultaten opgeleverd.</h1>
+						<p class="subtitle">Er zijn geen overeenkomsten gevonden voor "{{searchQuery}}"</p>
+						<img class="error__image" src="{{siteUrl}}assets/resources/images/no-results.svg"/>
+					</section>
+				{% endif %}
+
+			</div>
+		{% endblock %}
