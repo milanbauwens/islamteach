@@ -1,7 +1,7 @@
 {% set image = page.articleThumbnail.one() %}
 
 <a href="{{page.url}}" class="page__container">
-	<img class="page__image" src="{{siteUrl}}/uploads/{{image.url}}">
+	<img class="page__image" src="{{siteUrl}}/uploads/{{image.getUrl()}}">
 	<div>
 		<h2 class="page__title">
 			{{ page.title|striptags|length > 55 ? page.title|striptags|slice(0, 55) ~ '...' : page.title|striptags }}

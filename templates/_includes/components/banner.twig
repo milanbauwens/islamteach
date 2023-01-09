@@ -3,7 +3,7 @@
 		<div class="banner">
 			<div class="banner__visual">
 				{% set image = entry.bannerImage.one() %}
-				<img class="banner__image" src="{{siteUrl}}/uploads/{{ image.url }}" alt="{{ image.alt }}">
+				<img class="banner__image" src="{{siteUrl}}/uploads/{{ image.getUrl() }}" alt="{{ image.alt }}">
 			</div>
 			<div class="banner__content">
 				<h2 class="banner__title">

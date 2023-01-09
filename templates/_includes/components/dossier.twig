@@ -1,10 +1,10 @@
 <a href="{{article.url}}" class="article">
 	<div class="article__visual">
-		<img class="article__image" src="{{siteUrl}}uploads/{{ image.url }}">
+		<img class="article__image" src="{{siteUrl}}uploads/{{ image.getUrl() }}">
 		<div class="article__themes">
 			{% for theme in article.articleThemes %}
 				{% set icon = theme.themeIcon.one() %}
-				<img class="article__theme" src="{{siteUrl}}uploads/{{icon.url}}">
+				<img class="article__theme" src="{{siteUrl}}uploads/{{icon.getUrl()}}">
 			{% endfor %}
 		</div>
 	</div>
