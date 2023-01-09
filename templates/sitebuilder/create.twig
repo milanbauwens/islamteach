@@ -24,14 +24,14 @@
 			<form class="form" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 				{{ csrfInput() }}
 				{{ actionInput('entries/save-entry') }}
-				{% if parentId %}
+				{% if parentId != null %}
 					{{ redirectInput(parentSlug ~ '/{slug}')}}
 				{% else %}
 					{{ redirectInput( siteUrl ~'/{slug}')}}
 				{% endif %}
 				{{ hiddenInput('entryId', entry.id) }}
 				{{ hiddenInput('sectionId', '4') }}
-				{% if parentId %}
+				{% if parentId != null %}
 					{{ hiddenInput('parentId', parentId) }}
 				{% endif %}
 				{{ hiddenInput('enabled', '1') }}
@@ -54,7 +54,7 @@
 			    }) }}
 				</div>
 
-				{% if parentId == false %}
+				{% if parentId == null %}
 					<label>Thema's</label>
 					<div class="formgroup formgroup--flex">
 						{% for theme in themes %}
@@ -71,11 +71,10 @@
                         name: 'fields[articleExcerpt]',
                         text: entry.articleExcerpt,
                         required: true,
-                    })
-                }}
+                    })}}
 				</div>
 
-				{% if parentId %}
+				{% if parentId != null %}
 					<div class="formgroup">
 						<label for="articleRichtext">Inhoud</label>
 						{{ tag('textarea', {
@@ -88,7 +87,7 @@
 					</div>
 				{% endif %}
 
-				{% if parentId == false %}
+				{% if parentId == null %}
 					<div class="formgroup">
 						<label for="articleIntroduction">Dossier introductie</label>
 						{{ tag('textarea', {
@@ -101,7 +100,7 @@
 					</div>
 				{% endif %}
 
-				<button class="button button--primary" type="submit">{{ parentId ? 'Maak pagina' : 'Maak dossier'}}</button>
+				<button class="button button--primary" type="submit">{{ parentId != null ? 'Maak pagina' : 'Maak dossier'}}</button>
 			</form>
 		</div>
 	</div>
