@@ -14,7 +14,7 @@
 		{% endif %}
 
 		<div class="mb-2">
-			{% if parentId %}
+			{% if parentId != null %}
 				<h1 class="title">{{ new ? 'Maak een nieuwe pagina' : 'Bewerk pagina' }}</h1>
 			{% else %}
 				<h1 class="title">{{ new ? 'Maak een nieuw verdiepingsdossier' : 'Bewerk verdiepingsdossier' }}</h1>
@@ -54,7 +54,7 @@
 			    }) }}
 				</div>
 
-				{% if parentId == null %}
+				{% if parentId == false %}
 					<label>Thema's</label>
 					<div class="formgroup formgroup--flex">
 						{% for theme in themes %}
@@ -64,43 +64,43 @@
 					</div>
 				{% endif %}
 
-				{# <div class="formgroup">
-																									<label for=" articleExcerpt">Korte beschrijving</label>
-																									{{ tag('textarea', {
-																				                        id: 'articleExcerpt',
-																				                        name: 'fields[articleExcerpt]',
-																				                        text: entry.articleExcerpt,
-																				                        required: true,
-																				                    })}}
-																								</div> #}
+				<div class="formgroup">
+					<label for=" articleExcerpt">Korte beschrijving</label>
+					{{ tag('textarea', {
+                        id: 'articleExcerpt',
+                        name: 'fields[articleExcerpt]',
+                        text: entry.articleExcerpt,
+                        required: true,
+                    })}}
+				</div>
 
 				{% if parentId != null %}
 					<div class="formgroup">
 						<label for="articleRichtext">Inhoud</label>
 						{{ tag('textarea', {
-							id: 'articleRichtext',
-							name: 'fields[articleRichtext]',
-							class: 'editor',
-							text: entry.articleRichtext,
-							required: true,
-						}) }}
+                    id: 'articleRichtext',
+                    name: 'fields[articleRichtext]',
+					class: 'editor',
+                    text: entry.articleRichtext,
+                    required: true,
+                }) }}
 					</div>
 				{% endif %}
 
-				{# {% if parentId == null %}
-									<div class="formgroup">
-										<label for="articleIntroduction">Dossier introductie</label>
-										{{ tag('textarea', {
-											id: 'articleIntroduction',
-											name: 'fields[articleIntroduction]',
-											class: 'editor',
-											text: entry.articleIntroduction,
-											required: true,
-										}) }}
-									</div>
-								{% endif %} #}
+				{% if parentId == null %}
+					<div class="formgroup">
+						<label for="articleIntroduction">Dossier introductie</label>
+						{{ tag('textarea', {
+                    id: 'articleIntroduction',
+                    name: 'fields[articleIntroduction]',
+					class: 'editor',
+                    text: entry.articleIntroduction,
+                    required: true,
+                }) }}
+					</div>
+				{% endif %}
 
-				<button class="button button--primary" type="submit">{{ parentId != null ? 'Maak pagina' : 'Maak dossier'}}</button>
+				<button class="button button--primary" type="submit">{{ parentId ? 'Maak pagina' : 'Maak dossier'}}</button>
 			</form>
 		</div>
 	</div>
