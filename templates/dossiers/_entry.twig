@@ -38,7 +38,7 @@
 			<h1 class="article-detail__title">{{entry.title}}</h1>
 
 			{% if entry.authorID == currentUser.id %}
-				{# <div class="dropdown">
+				<div class="dropdown">
 					<button onclick="dropdown()" class="article-detail__action dropdownBtn" type="button" id="dropbtn">
 						<img src="{{siteUrl}}/assets/resources/icons/dots.svg">
 					</button>
@@ -56,7 +56,7 @@
 							<button type="submit" class="dropdown-item">Verwijderen</button>
 						</form>
 					</div>
-				</div> #}
+				</div>
 			{% endif %}
 		</div>
 

@@ -69,7 +69,7 @@ fieldLayouts:
             fieldUid: 035fede9-061b-4a1c-8935-6c5dbc4f85e9 # Article Introduction
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4045292d-57d3-4f77-a289-a6652b5f86b2
@@ -91,7 +91,7 @@ fieldLayouts:
             fieldUid: 75256130-05a9-4bdb-a7d6-d8dd429c3271 # Article Richtext
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c1010871-234b-491e-94ae-261fcdc54375
@@ -113,7 +113,7 @@ fieldLayouts:
             fieldUid: 2f96dd37-227f-4569-a639-77faf69428ed # Article Themes
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d1c2f2ac-e2a2-43e6-b735-d9828e929577

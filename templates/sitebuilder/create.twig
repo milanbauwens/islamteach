@@ -8,8 +8,10 @@
 		{% set themes = craft.categories.all() %}
 		{% set new = entry.id is null %}
 		{% set parentId = craft.app.request.getParam('parentId') %}
-		{% set parentEntry = craft.entries.id(parentId).one() %}
-		{% set parentSlug = parentEntry.slug %}
+		{% if parentId != null %}
+			{% set parentEntry = craft.entries.id(parentId).one() %}
+			{% set parentSlug = parentEntry.slug %}
+		{% endif %}
 
 		<div class="mb-2">
 			{% if parentId %}
@@ -25,7 +27,7 @@
 				{% if parentId %}
 					{{ redirectInput(parentSlug ~ '/{slug}')}}
 				{% else %}
-					{{ redirectInput(siteUrl ~ '/{slug}')}}
+					{{ redirectInput( '/{slug}')}}
 				{% endif %}
 				{{ hiddenInput('entryId', entry.id) }}
 				{{ hiddenInput('sectionId', '4') }}
@@ -85,7 +87,6 @@
                 }) }}
 					</div>
 				{% endif %}
-
 
 				{% if parentId == false %}
 					<div class="formgroup">

@@ -23,11 +23,12 @@ function getImgData() {
 // Rich Text Editor
 const editor = document.querySelectorAll('.editor');
 
-if (editor) {
 editor.forEach(element => {
+  if (element) {
     new FroalaEditor(element)
+  }
 });
-}
+
 
 // Dropdown 
 /* When the user clicks on the button, 
