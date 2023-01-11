@@ -1,0 +1,19 @@
+columnSuffix: hdecbrrj
+contentColumnType: text
+fieldGroup: ff43ce60-87a7-4b19-ac73-c3577a93e70e # Researchdossiers
+handle: researchdossierIntroduction
+instructions: null
+name: 'Researchdossier Introduction'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 8
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

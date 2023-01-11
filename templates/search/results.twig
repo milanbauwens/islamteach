@@ -87,11 +87,14 @@
 						</nav>
 					{% endif %}
 				{% else %}
-					<section class="error__wrapper">
-						<h1 class="title">Je zoekopdracht heeft geen resultaten opgeleverd.</h1>
-						<p class="subtitle">Er zijn geen overeenkomsten gevonden voor "{{searchQuery}}"</p>
-						<img class="error__image" src="{{siteUrl}}assets/resources/images/no-results.svg"/>
-					</section>
+					<div class="flex flex--center">
+						<div class="state--empty">
+							<img src="{{siteUrl}}assets/resources/images/nothing-found.svg">
+							<h3>Geen resultaten</h3>
+							<p>Je zoekopdracht voor "{{searchQuery}}" heeft geen resultaten opgeleverd.
+							</p>
+						</div>
+					</div>
 				{% endif %}
 
 			</div>

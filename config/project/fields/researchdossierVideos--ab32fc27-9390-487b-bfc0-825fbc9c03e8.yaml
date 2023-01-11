@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: ff43ce60-87a7-4b19-ac73-c3577a93e70e # Researchdossiers
+handle: researchdossierVideos
+instructions: null
+name: 'Researchdossier Videos'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_researchdossiervideos}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

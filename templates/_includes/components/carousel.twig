@@ -1,0 +1,21 @@
+<div class="my-slider carousel-theme__wrapper">
+	{% set themes = craft.categories().group('themes') %}
+
+	{% for theme in themes %}
+		{% set icon = theme.themeIcon.one() %}
+		<div>
+			<a href="{{theme.url}}" class="carousel-theme">
+				<div class="carousel-theme__container">
+					<img class="carousel-theme__icon" src="{{siteUrl}}uploads/{{ icon.getUrl() }}" alt={{ icon.alt}}>
+				</div>
+				<h2 class="carousel-theme__title">{{theme.title}}</h2>
+			</a>
+		</div>
+	{% endfor %}
+</div>
+<div class="carousel__nav">
+	<div class="carousel__dot"></div>
+	<div class="carousel__dot"></div>
+	<div class="carousel__dot"></div>
+	<div class="carousel__dot"></div>
+</div>

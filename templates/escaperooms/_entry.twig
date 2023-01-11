@@ -13,19 +13,19 @@
 			</li>
 		</ul>
 
-		<p class="article-detail__creator">
-			<span class="article-detail__creator bold">{{entry.author}}</span>
+		<p class="detail__creator">
+			<span class="detail__creator bold">{{entry.author}}</span>
 			|
 			{{entry.dateCreated|date('d/m/Y')}}
 		</p>
 
-		<h1 class="article-detail__title">{{entry.title}}</h1>
-		<div class="article-detail__theme-wrapper">
+		<h1 class="detail__title">{{entry.title}}</h1>
+		<div class="detail__theme-wrapper">
 			{% for theme in entry.escaperoomThemes %}
-				<p class="article-detail__theme">{{theme.title}}</p>
+				<p class="detail__theme">{{theme.title}}</p>
 			{% endfor %}
 		</div>
-		<div class="article-detail__text">
+		<div class="detail__text">
 			{{entry.escaperoomExplanation}}
 		</div>
 

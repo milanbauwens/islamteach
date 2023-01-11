@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: researchdossierOverview
+name: 'Researchdossier Overview'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  1cc07613-bcbe-41a4-a746-e98bc2d3fd9a: # ArabTeach
+    enabledByDefault: true
+    hasUrls: true
+    template: researchdossiers/index
+    uriFormat: researchdossier
+type: single

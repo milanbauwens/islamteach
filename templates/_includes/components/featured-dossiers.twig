@@ -1,11 +1,13 @@
 <!-- Featured -->
 <section class="featured">
-	<h1 class="title">Uitgelichte verdiepingsdossiers</h1>
-	<div class="article__wrapper">
-		{% for article in featuredArticles %}
-			{% set image = article.articleThumbnail.one() %}
+	{% if featuredArticles|length > 0 %}
+		<h1 class="title">Uitgelichte verdiepingsdossiers</h1>
+		<div class="article__wrapper">
+			{% for article in featuredArticles %}
+				{% set image = article.articleThumbnail.one() %}
 
-			{% include "_includes/components/dossier" %}
-		{% endfor %}
-	</div>
+				{% include "_includes/components/dossier" %}
+			{% endfor %}
+		</div>
+	{% endif %}
 </section>

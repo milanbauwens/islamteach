@@ -1,3 +1,6 @@
+{% if entry.bannerCallToAction %}
+	{% set cta = entry.bannerCallToAction.one() %}
+{% endif %}
 <section class="container--fluid">
 	<div class="wrapper">
 		<div class="banner">
@@ -12,6 +15,11 @@
 				<p class="banner__text">
 					{{ entry.bannerDescription }}
 				</p>
+				{% if entry.bannerCallToAction  %}
+					<a href="{{cta.callToActionUrl}}" class="button button--primary">
+						{{cta.label}}
+					</a>
+				{% endif %}
 			</div>
 		</div>
 	</div>

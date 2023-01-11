@@ -69,6 +69,60 @@ fieldLayouts:
         name: 'Featured Escaperooms'
         uid: c3105ad7-2f68-4833-9a72-900e424bdf4e
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 660b115f-cacb-4933-950d-704cb3d9732d # Banner Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e7b4be6f-fd8e-40b6-b227-0c444983e058
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2d15c365-195c-4cd6-beb2-359ae1611637 # Banner Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 265a0f8b-63de-40ad-bd18-3e45e83b9e1e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8a46cef0-d86e-40fa-ab69-317431fce475 # Banner Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 23aa5ee5-2401-4209-a95a-2ab47f38f0f5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5869df8b-c9a4-47cb-b94b-1cfec6b8130f # Banner Call To Action
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e77a3899-6104-4634-81d9-f5cdc2a59846
+            userCondition: null
+            warning: null
+            width: 100
+        name: Banner
+        uid: 08c33992-79f5-43e7-a99b-2401cd2e66d6
+        userCondition: null
 handle: dashboard
 hasTitleField: true
 name: Dashboard

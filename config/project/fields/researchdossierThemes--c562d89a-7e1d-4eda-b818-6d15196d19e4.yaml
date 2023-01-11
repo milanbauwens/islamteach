@@ -1,0 +1,25 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: ff43ce60-87a7-4b19-ac73-c3577a93e70e # Researchdossiers
+handle: researchdossierThemes
+instructions: null
+name: 'Researchdossier Themes'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: 5
+  localizeRelations: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: 'Add a theme'
+  showSiteMenu: false
+  source: 'group:aa37cc9c-6e1f-4bc4-96f8-4de66f06ac3f' # Themes
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

@@ -1,21 +1,40 @@
 {% extends "_layouts/site" %}
 
 {% block content %}
-	{% set articles = craft.entries.section('dossiers').hasDescendants().all() %}
+	{% set articles = craft.entries({
+		section: 'dossiers',
+		level: 1,
+	}).all() %}
 
 	<div class="wrapper">
 		<div class="mb-2">
-			<h1 class="title title--flex">Alle verdiepingsdossiers
-				<span class="results__count">{{articles|length}}</span>
-			</h1>
-		</div>
-		<div class="article__wrapper">
-			{% for article in articles %}
+			<div class="flex flex--between">
+				<h1 class="title title--flex">Alle verdiepingsdossiers
+					<span class="results__count">{{articles|length}}</span>
+				</h1>
+				<a href="{{siteUrl}}sitebuilder/create" class="action__icon">
+					<img src="{{siteUrl}}/assets/resources/icons/plus.svg">
+				</a>
+			</div>
 
-				{% set image = article.articleThumbnail.one() %}
+			{% if articles|length > 0 %}
+				<div class="article__wrapper">
+					{% for article in articles %}
+						{% set image = article.articleThumbnail.one() %}
 
-				{% include "_includes/components/dossier" %}
-			{% endfor %}
+						{% include "_includes/components/dossier" %}
+					{% endfor %}
+				</div>
+			{% else %}
+				<div class="flex flex--center">
+					<div class="state--empty">
+						<img src="{{siteUrl}}assets/resources/images/nothing-found.svg">
+						<h3>Het is hier leeg</h3>
+						<p>Je hebt nog geen verdiepingsdossiers. Klik op het plus icoon om er één aan te maken.
+						</p>
+					</div>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

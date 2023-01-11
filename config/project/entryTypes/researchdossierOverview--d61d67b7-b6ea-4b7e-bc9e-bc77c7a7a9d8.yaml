@@ -1,0 +1,43 @@
+fieldLayouts:
+  63e0dc7a-b84b-4fa0-9497-cc720bb9205b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9436afc1-9556-4195-9d81-6ab4a6509252
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a2cec78f-bb22-4235-9f07-4dc07bc96a98
+        userCondition: null
+handle: researchdossierOverview
+hasTitleField: false
+name: 'Researchdossier Overview'
+section: 04306b3e-f8c6-4b53-8659-0661d9004fbf # Researchdossier Overview
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

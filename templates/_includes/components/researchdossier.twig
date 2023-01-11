@@ -1,0 +1,22 @@
+<a href="{{researchdossier.url}}" class="article">
+	<div class="article__visual">
+		<img class="article__image" src="{{siteUrl}}uploads/{{ image.getUrl() }}">
+		<div class="article__themes">
+			{% for theme in researchdossier.researchdossierThemes %}
+				{% set icon = theme.themeIcon.one() %}
+				<img class="article__theme" src="{{siteUrl}}uploads/{{icon.getUrl()}}">
+			{% endfor %}
+		</div>
+	</div>
+	<div class="article__content">
+		<h3 class="article__title">{{researchdossier.title}}</h3>
+		<p class="article__excerpt">
+			{{ researchdossier.researchdossierExcerpt|striptags|length > 100 ? researchdossier.researchdossierExcerpt|striptags|slice(0, 100) ~ '...' : researchdossier.researchdossierExcerpt|striptags }}
+		</p>
+		<p class="article__info">
+			<span class="article__info bold">{{researchdossier.author}}</span>
+			|
+			{{researchdossier.dateCreated|date('d/m/Y')}}
+		</p>
+	</div>
+</a>

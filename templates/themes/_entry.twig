@@ -14,34 +14,42 @@
 
 
 	<div class="wrapper">
-		<div class="mb-2">
-			<h1 class=" title">{{category.title}}</h1>
-		</div>
+		<div class="mb-10">
+			<div class="mb-2">
+				<h1 class=" title">{{category.title}}</h1>
+			</div>
 
-		<h2 class="subtitle">Verdiepingsdossiers</h2>
-		<div class="escaperoom__wrapper">
-			{% if articles %}
+			{% if escaperooms or articles %}
+				{% if articles %}
+					<h2 class="subtitle">Verdiepingsdossiers</h2>
+					<div class="escaperoom__wrapper">
+						{% for article in articles %}
+							{% set image = article.articleThumbnail.one() %}
 
-				{% for article in articles %}
-					{% set image = article.articleThumbnail.one() %}
+							{% include "_includes/components/dossier" %}
+						{% endfor %}
+					</div>
+				{% endif %}
 
-					{% include "_includes/components/dossier" %}
-				{% endfor %}
+				{% if escaperooms %}
+					<h2 class="subtitle">Edu escaprooms</h2>
+					<div class="escaperoom__wrapper">
+						{% for escaperoom in escaperooms %}
+							{% include "_includes/components/escaperoom" %}
+						{% endfor %}
+					</div>
+				{% endif %}
 			{% else %}
-				<p>Er zijn nog geen artikels in deze categorie</p>
+				<div class="flex flex--center">
+					<div class="state--empty">
+						<img src="{{siteUrl}}assets/resources/images/nothing-found.svg">
+						<h3>Het is hier leeg</h3>
+						<p>Je hebt nog geen verdiepingsdossiers. Klik op het plus icoon om er één aan te maken.
+						</p>
+					</div>
+				</div>
+				<div class="mb-10"></div>
 			{% endif %}
-
-		</div>
-		<h2 class="subtitle">Edu escaprooms</h2>
-		<div class="escaperoom__wrapper">
-			{% if escaperooms %}
-				{% for escaperoom in escaperooms %}
-					{% include "_includes/components/escaperoom" %}
-				{% endfor %}
-			{% else %}
-				<p>Er zijn nog geen escaperooms in deze categorie</p>
-			{% endif %}
-
 		</div>
 	</div>
 {% endblock %}

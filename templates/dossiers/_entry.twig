@@ -8,7 +8,7 @@
 		})
 	%}
 
-	<img class="article-detail__image" src="{{siteUrl}}/uploads/{{image.getUrl()}}">
+	<img class="detail__image" src="{{siteUrl}}/uploads/{{image.getUrl()}}">
 
 	<div
 		class="wrapper--small">
@@ -28,18 +28,18 @@
 			</li>
 		</ul>
 
-		<p class="article-detail__creator">
-			<span class="article-detail__creator bold">{{entry.author}}</span>
+		<p class="detail__creator">
+			<span class="detail__creator bold">{{entry.author}}</span>
 			|
 			{{entry.dateCreated|date('d/m/Y')}}
 		</p>
 
 		<div class="flex flex--between">
-			<h1 class="article-detail__title">{{entry.title}}</h1>
+			<h1 class="detail__title">{{entry.title}}</h1>
 
 			{% if entry.authorID == currentUser.id %}
 				<div class="dropdown">
-					<button onclick="dropdown()" class="article-detail__action dropdownBtn" type="button" id="dropdownBtn">
+					<button onclick="dropdown()" class="detail__action dropdownBtn" type="button" id="dropdownBtn">
 						<img src="{{siteUrl}}/assets/resources/icons/dots.svg">
 					</button>
 					<div id="dropdownContent" class="dropdown-content">
@@ -53,7 +53,7 @@
 							{{ actionInput('entries/save-entry') }}
 							{{ hiddenInput('entryId', entry.id) }}
 							{{ hiddenInput('enabled', '0') }}
-							{{ redirectInput( siteUrl ~ 'dashboard') }}
+							{{ redirectInput( siteUrl ~ 'sitebuilder') }}
 							<button type="submit" class="dropdown-item">Verwijderen</button>
 						</form>
 					</div>
@@ -64,18 +64,18 @@
 
 		{# Checks if the entry the parent of the dossier #}
 		{% if entry.level == 1 %}
-			<div class="article-detail__theme-wrapper">
+			<div class="detail__theme-wrapper">
 				{% for theme in entry.articleThemes %}
-					<p class="article-detail__theme">{{theme.title}}</p>
+					<p class="detail__theme">{{theme.title}}</p>
 				{% endfor %}
 			</div>
 
-			<div class="article-detail__text">
+			<div class="detail__text">
 				{{ entry.articleIntroduction }}
 			</div>
 
 		{% else %}
-			<div class="article-detail__text">
+			<div class="detail__text">
 				{{ entry.articleRichtext|replace('<p>Powered by <a href="https://www.froala.com/wysiwyg-editor?pb=1" title="Froala Editor">Froala Editor</a></p>', '')|purify|nl2br }}
 			</div>
 		{% endif %}
@@ -94,13 +94,20 @@
 			{% endif %}
 
 			{% if pages|length > 0 %}
-				<ul class="article-detail__navigation ">
+				<ul class="detail__navigation ">
 					{% for page in pages %}
 						{% include "_includes/components/page" %}
 					{% endfor %}
 				</ul>
 			{% else %}
-				<p>Er zijn nog geen pagina's toegevoegd aan dit dossier.</p>
+				<div class="flex flex--center">
+					<div class="state--empty">
+						<img src="{{siteUrl}}assets/resources/images/nothing-found.svg">
+						<h3>Het is hier leeg</h3>
+						<p>Je hebt nog geen pagina's. Klik op het plus icoon om er één aan te maken.
+						</p>
+					</div>
+				</div>
 			{% endif %}
 		{% endif %}
 	</div>

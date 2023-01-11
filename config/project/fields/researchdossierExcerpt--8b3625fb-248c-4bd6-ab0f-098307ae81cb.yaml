@@ -1,0 +1,19 @@
+columnSuffix: zxixcrxw
+contentColumnType: text
+fieldGroup: ff43ce60-87a7-4b19-ac73-c3577a93e70e # Researchdossiers
+handle: researchdossierExcerpt
+instructions: null
+name: 'Researchdossier Excerpt'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 2
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Yii Application Config
  *

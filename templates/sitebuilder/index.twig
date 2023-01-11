@@ -20,13 +20,24 @@
 			</a>
 		</div>
 
-		<div class="article__wrapper">
-			{% for article in ownedArticles %}
+		{% if ownedArticles|length > 0 %}
+			<div class="article__wrapper">
+				{% for article in ownedArticles %}
 
-				{% set image = article.articleThumbnail.one() %}
+					{% set image = article.articleThumbnail.one() %}
 
-				{% include "_includes/components/dossier" %}
-			{% endfor %}
-		</div>
+					{% include "_includes/components/dossier" %}
+				{% endfor %}
+			</div>
+		{% else %}
+			<div class="flex flex--center">
+				<div class="state--empty">
+					<img src="{{siteUrl}}assets/resources/images/nothing-found.svg">
+					<h3>Het is hier leeg</h3>
+					<p>Je hebt nog geen verdiepingsdossiers. Klik op het plus icoon om er één aan te maken.
+					</p>
+				</div>
+			</div>
+		{% endif %}
 	</div>
 {% endblock %}

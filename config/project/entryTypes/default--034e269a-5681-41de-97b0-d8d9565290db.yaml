@@ -1,0 +1,127 @@
+fieldLayouts:
+  028cfa7f-0235-4f37-9c87-ceaf8a630353:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3b369fa0-0930-44f7-afb6-cc297053fe07
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 30377148-20b5-4e1c-bde8-b1e3a6dc2205 # Researchdossier Thumbnail
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b82b958b-5b6b-4095-b666-968b21f54786
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c562d89a-7e1d-4eda-b818-6d15196d19e4 # Researchdossier Themes
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ecba2c04-91a0-462d-8ffc-4c9394d66621
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8b3625fb-248c-4bd6-ab0f-098307ae81cb # Researchdossier Excerpt
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b4552031-3c8a-4ceb-a264-b21454ce168c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3d5b49bc-a866-408d-9fb7-2de8e669a7bf # Researchdossier Introduction
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1774a853-eb97-413d-ab83-ac9bf5e0b6db
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7ea58559-504f-4aca-ba7a-bf91db489866 # Researchdossier Richtext
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eb617845-98d4-4d07-8454-68cf44888fb5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ab32fc27-9390-487b-bfc0-825fbc9c03e8 # Researchdossier Videos
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 30da103e-0561-453a-bae2-009f6078da80
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f27169dd-394b-43f3-a168-a31798fdb956 # Researchdossier Sources
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fed33323-a22c-440a-b0e4-c0e795d888f2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 76dadd99-be66-4aeb-a3af-a131dc2352fa
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: 5ac22ce5-ee2c-4a4d-9fa2-f77f1224471b # Researchdossiers
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

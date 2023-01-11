@@ -1,0 +1,54 @@
+{% extends "_layouts/page" %}
+{% block content %}
+	{% set image = entry.researchdossierThumbnail.one() %}
+
+	<div class="wrapper--small">
+		<div class="detail-variant__header">
+			<p class="detail__creator">
+				<span class="detail__creator bold">{{entry.author}}</span>
+				|
+				{{entry.dateCreated|date('d/m/Y')}}
+			</p>
+			<h1 class="detail-variant__title">{{entry.title}}</h1>
+			<div class="detail__theme-wrapper">
+				{% for theme in entry.researchdossierThemes %}
+					<p class="detail__theme">{{theme.title}}</p>
+				{% endfor %}
+			</div>
+		</div>
+
+		<img class="detail-variant__image" src="{{siteUrl}}/uploads/{{image.getUrl()}}">
+
+		<p class="detail-variant__introduction">
+			{{entry.researchdossierIntroduction}}
+		</p>
+
+		<div class="detail-variant__text">
+			{{entry.researchdossierRichtext}}
+		</div>
+
+		{% if entry.researchdossierVideos|length > 0 %}
+			<h2 class="title">Video's</h2>
+			<div class="detail-variant__videowrapper">
+				{% for video in entry.researchdossierVideos %}
+					<a target="blank" class="detail-variant__video" href={{video.videoLink}}>
+						<img src="{{siteUrl}}assets/resources/icons/play.svg">
+						<p>{{video.videoName}}</p>
+					</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		{% if entry.researchdossierSources|length > 0 %}
+			<h2 class="title">Bronnen</h2>
+			<div class="detail-variant__sources">
+				{% for source in entry.researchdossierSources %}
+					<a target="blank" href="{{source.sourceLink}}" class="detail-variant__source">
+						{{source.sourceName}}
+						<img src="{{siteUrl}}assets/resources/icons/ext.svg">
+					</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

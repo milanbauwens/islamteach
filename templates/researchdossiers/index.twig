@@ -1,0 +1,32 @@
+{% extends "_layouts/site" %}
+
+{% block content %}
+	{% set researchdossiers = craft.entries.section('researchdossiers').all() %}
+
+	<div class="wrapper">
+		<div class="mb-2">
+			<div class="mb-2">
+				<h1 class="title title--flex">Alle onderzoeksvragen
+					<span class="results__count">{{researchdossiers|length}}</span>
+				</h1>
+			</div>
+
+			{% if researchdossiers|length > 0 %}
+				<div class="article__wrapper">
+					{% for researchdossier in researchdossiers %}
+						{% set image = researchdossier.researchdossierThumbnail.one() %}
+						{% include "_includes/components/researchdossier" %}
+					{% endfor %}
+				</div>
+			{% else %}
+				<div class="flex flex--center">
+					<div class="state--empty">
+						<img src="{{siteUrl}}assets/resources/images/nothing-found.svg">
+						<h3>Het is hier leeg</h3>
+						<p>Er zijn nog geen beschikbare onderzoeksvragen. Probeer het later nog eens.</p>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
