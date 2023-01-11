@@ -1,2 +1,10 @@
 isPublic: true
 name: 'Public Schema'
+scope:
+  - 'sections.6eece8c8-71a4-4945-83f3-b8992cf3bdbf:read' # Dossiers
+  - 'volumes.a9f8cd7f-5cfe-4c94-8055-9fdd73c3c08f:read' # Uploads
+  - 'sections.6eece8c8-71a4-4945-83f3-b8992cf3bdbf:edit' # Dossiers
+  - 'entrytypes.dcdfcd06-f1f9-455b-af3c-15b555accee2:edit' # Articles
+  - 'entrytypes.dcdfcd06-f1f9-455b-af3c-15b555accee2:delete' # Articles
+  - 'volumes.a9f8cd7f-5cfe-4c94-8055-9fdd73c3c08f:edit' # Uploads
+  - 'volumes.a9f8cd7f-5cfe-4c94-8055-9fdd73c3c08f:delete' # Uploads

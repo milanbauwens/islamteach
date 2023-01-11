@@ -1,6 +1,7 @@
 // Image preview
 const chooseFile = document.getElementById("articleThumbnail");
 const imgPreview = document.getElementById("imgPreview");
+const currentUpload = document.getElementById("current-upload");
 
 if (chooseFile) {
   chooseFile.addEventListener("change", function () {
@@ -14,6 +15,7 @@ function getImgData() {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(files);
       fileReader.addEventListener("load", function () {
+        currentUpload.style.display = "none";
         imgPreview.style.display = "block";
         imgPreview.innerHTML = '<img src="' + this.result + '" />';
       });    
@@ -33,25 +35,16 @@ editor.forEach(element => {
 
 
 // Dropdown 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function dropdown() {
-  document.getElementById("dropdownContent").classList.toggle("show");
-}
+const dropdownBtn = document.getElementById('dropdownBtn');
+const dropdownContent = document.getElementById('dropdownContent');
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropdownBtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+dropdownBtn.addEventListener('click', (e) => {
+  if (dropdownContent.classList.contains('show')) {
+    dropdownContent.classList.remove('show')
+  } else {
+    dropdownContent.classList.add('show')    
   }
-}
+})
 
 // Froala Editor
 setTimeout(function () {

@@ -21,7 +21,7 @@ settings:
   showHtmlButtonForNonAdmins: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  uiMode: normal
+  uiMode: enlarged
 translationKeyFormat: null
 translationMethod: none
 type: craft\redactor\Field

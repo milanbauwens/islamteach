@@ -88,6 +88,10 @@ main .container--grey{
     display: flex;
 }
 
+.flex .gap-2 {
+    gap: 2rem;
+}
+
 .flex--between {
     justify-content: space-between;
     align-items: center;
@@ -583,39 +587,6 @@ header a, header nav a{
     gap: 1rem;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--neutral-100);
-    min-width: 160px;
-    z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content form {
-    padding: 0.5rem 1rem;
-    background-color: white;
-    display: block;
-}
-
-.dropdown-content form:hover {
-    background-color: #F4F7F8;
-    cursor: pointer;
-}
-
-.dropdown-content form button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.show {display:block;}
-
 .article-detail__action {
     border: none;
     background-color: var(--neutral-300);
@@ -632,6 +603,7 @@ header a, header nav a{
 
 .article-detail__action:hover {
     background-color: var(--neutral-200);
+    transition: 0.2s ease-in;
 }
 
 .delete {
@@ -941,12 +913,12 @@ footer {
     font-size: 1rem;
     color: var(--neutral-900);
     padding: 1rem 1rem;
-    height: 100px;
+    min-height: 100px;
     border: none;
     border-radius: 0.5rem;
     background-color: var(--neutral-200);
     outline: none;
-    resize: none;
+    resize: vertical;
 }
 
 .formgroup .checkbox {
@@ -983,6 +955,13 @@ footer {
     width: 100%;
     height: auto; 
     display: block;   
+}
+
+#current-upload {
+    display: block;
+    width: 155px;   
+    border: 2px dashed #333;  
+    margin-bottom: 20px;
 }
 
 .success, .error {
@@ -1056,3 +1035,44 @@ footer {
     background-color: var(--neutral-200);
     transition: 0.2s ease-in;
 }
+
+/**
+* Dropdown
+*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--neutral-100);
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content form, .dropdown-content a {
+    padding: 1rem 1rem;
+    background-color: white;
+    display: block;
+    color: var(--neutral-900);
+    text-decoration: none;
+}
+
+.dropdown-content form:hover, .dropdown-content a:hover{
+    background-color: #F4F7F8;
+    cursor: pointer;
+}
+
+.dropdown-content form button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.show {display:block;}

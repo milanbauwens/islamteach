@@ -39,25 +39,28 @@
 
 			{% if entry.authorID == currentUser.id %}
 				<div class="dropdown">
-					<button onclick="dropdown()" class="article-detail__action dropdownBtn" type="button" id="dropbtn">
+					<button onclick="dropdown()" class="article-detail__action dropdownBtn" type="button" id="dropdownBtn">
 						<img src="{{siteUrl}}/assets/resources/icons/dots.svg">
 					</button>
 					<div id="dropdownContent" class="dropdown-content">
-						<form>
-							<button type="submit" class="dropdown-item">Bewerken</button>
-						</form>
+						{% if entry.level == 1 %}
+							<a href="{{ siteUrl('sitebuilder/edit', {entryId: entry.id}) }}">Bewerken</a>
+						{% else %}
+							<a href="{{ siteUrl('sitebuilder/create', {entryId: entry.id, parentId: entry.parent.id}) }}">Bewerken</a>
+						{% endif %}
 						<form method="post" accept-charset="UTF-8">
 							{{ csrfInput() }}
-							{{ actionInput('craft\elements\actions\Delete') }}
-							{{ redirectInput('/dashboard') }}
+							{{ actionInput('entries/save-entry') }}
 							{{ hiddenInput('entryId', entry.id) }}
-							{{ hiddenInput('withDescendants', true) }}
+							{{ hiddenInput('enabled', '0') }}
+							{{ redirectInput( siteUrl ~ 'dashboard') }}
 							<button type="submit" class="dropdown-item">Verwijderen</button>
 						</form>
 					</div>
 				</div>
 			{% endif %}
 		</div>
+
 
 		{# Checks if the entry the parent of the dossier #}
 		{% if entry.level == 1 %}
@@ -68,8 +71,9 @@
 			</div>
 
 			<div class="article-detail__text">
-				{{entry.articleIntroduction}}
+				{{ entry.articleIntroduction }}
 			</div>
+
 		{% else %}
 			<div class="article-detail__text">
 				{{ entry.articleRichtext|replace('<p>Powered by <a href="https://www.froala.com/wysiwyg-editor?pb=1" title="Froala Editor">Froala Editor</a></p>', '')|purify|nl2br }}

@@ -440,11 +440,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.3.6",
+            "version": "4.3.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/63dc20ee5baf3a3de44fb2f674ee311eb32deabb",
-                "reference": "63dc20ee5baf3a3de44fb2f674ee311eb32deabb",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/c3afbef706beafbe71b64735e1124ff345dc6e48",
+                "reference": "c3afbef706beafbe71b64735e1124ff345dc6e48",
                 "shasum": ""
             },
             "require": {
@@ -535,7 +535,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2023-01-04T21:59:28+00:00"
+            "time": "2023-01-10T00:55:43+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -2162,11 +2162,6 @@
         {
             "name": "psr/cache",
             "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/cache.git",
-                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/php-fig/cache/zipball/aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
@@ -2187,7 +2182,6 @@
                     "Psr\\Cache\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2203,9 +2197,6 @@
                 "psr",
                 "psr-6"
             ],
-            "support": {
-                "source": "https://github.com/php-fig/cache/tree/3.0.0"
-            },
             "time": "2021-02-03T23:26:27+00:00"
         },
         {
@@ -2898,11 +2889,6 @@
         {
             "name": "symfony/cache-contracts",
             "version": "v3.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/cache-contracts.git",
-                "reference": "1c0a181c9ee221afe4fa55b2d13fc63c5ae14348"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/cache-contracts/zipball/1c0a181c9ee221afe4fa55b2d13fc63c5ae14348",
@@ -2931,7 +2917,6 @@
                     "Symfony\\Contracts\\Cache\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2954,23 +2939,6 @@
                 "interfaces",
                 "interoperability",
                 "standards"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/cache-contracts/tree/v3.0.2"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2022-01-02T09:55:41+00:00"
         },
@@ -4892,11 +4860,6 @@
         {
             "name": "symfony/translation-contracts",
             "version": "v3.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "acbfbb274e730e5a0236f619b6168d9dedb3e282"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/acbfbb274e730e5a0236f619b6168d9dedb3e282",
@@ -4924,7 +4887,6 @@
                     "Symfony\\Contracts\\Translation\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4947,23 +4909,6 @@
                 "interfaces",
                 "interoperability",
                 "standards"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/translation-contracts/tree/v3.0.2"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2022-06-27T17:10:44+00:00"
         },
@@ -6112,11 +6057,11 @@
         },
         {
             "name": "webonyx/graphql-php",
-            "version": "v14.11.8",
+            "version": "v14.11.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/04a48693acd785330eefd3b0e4fa67df8dfee7c3",
-                "reference": "04a48693acd785330eefd3b0e4fa67df8dfee7c3",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/ff91c9f3cf241db702e30b2c42bcc0920e70ac70",
+                "reference": "ff91c9f3cf241db702e30b2c42bcc0920e70ac70",
                 "shasum": ""
             },
             "require": {
@@ -6143,7 +6088,7 @@
                 "api",
                 "graphql"
             ],
-            "time": "2022-09-21T15:35:03+00:00"
+            "time": "2023-01-06T12:12:50+00:00"
         },
         {
             "name": "yiisoft/yii2",

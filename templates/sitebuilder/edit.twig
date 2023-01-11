@@ -1,0 +1,113 @@
+{% extends "_layouts/page" %}
+
+{% block content %}
+
+	<div class="wrapper--small">
+		{% set entryId = craft.app.request.getParam('entryId') %}
+		{% set parentId = craft.app.request.getParam('parentId') %}
+		{% set new = entryId is null %}
+		{% set dossierEntry = craft.entries.id(entryId).one() %}
+		{% if parentId != null %}
+			{% set parentEntry = craft.entries.id(parentId).one() %}
+			{% set parentSlug = parentEntry.slug %}
+		{% endif %}
+		{% set themes = craft.categories.group('themes').all() %}
+		{% set image = dossierEntry.articleThumbnail.one() %}
+
+		<div class="mb-2">
+			<h1 class="title">{{ parentId != null ? 'Bewerk verdiepingsdossier' : 'Bewerk pagina' }}</h1>
+		</div>
+
+		<div>
+			<form class="form" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+				{{ csrfInput() }}
+				{{ actionInput('entries/save-entry') }}
+				{% if parentId != null %}
+					{{ redirectInput(parentSlug ~ '/{slug}')}}
+				{% else %}
+					{{ redirectInput( siteUrl ~ '{slug}')}}
+				{% endif %}
+				{{ hiddenInput('entryId', dossierEntry.id) }}
+				{{ hiddenInput('sectionId', '4') }}
+				{% if parentId != null %}
+					{{ hiddenInput('parentId', parentId) }}
+				{% endif %}
+				{{ hiddenInput('enabled', '1') }}
+
+				<div class="formgroup">
+					<label for="title">Titel</label>
+					{{ input('text', 'title', dossierEntry.title, {
+                        id: 'title',
+                        required: true,
+                    }) }}
+				</div>
+
+				<div class="formgroup">
+					<label for="articleThumbnail">Thumbnail</label>
+					<div>
+						<img id="current-upload" src="{{siteUrl}}uploads/{{ image.getUrl() }}">
+						<div id="imgPreview"></div>
+						{{ input('file', 'fields[articleThumbnail][]', options={
+                            multiple: false,
+							id: 'articleThumbnail',
+						}) }}
+					</div>
+				</div>
+
+				{% if parentId == false %}
+					<label>Thema's</label>
+					<div class="formgroup formgroup--flex">
+						{% for theme in themes %}
+							{% set checked = false %}
+							{% for activeTheme in dossierEntry.articleThemes.all() %}
+								{% if activeTheme.id == theme.id %}
+									{% set checked = true %}
+								{% endif %}
+							{% endfor %}
+
+							<input class="checkbox" type="checkbox" name="fields[articleThemes][]" id="{{theme.id}}" value="{{theme.id}}" {{ checked ? 'checked' : ''}}>
+							<label class="checkbox__label" for="{{theme.id}}">{{theme.title}}</label>
+						{% endfor %}
+					</div>
+				{% endif %}
+
+				<div class="formgroup">
+					<label for=" articleExcerpt">Korte beschrijving</label>
+					{{ tag('textarea', {
+                            id: 'articleExcerpt',
+                            name: 'fields[articleExcerpt]',
+                            text: dossierEntry.articleExcerpt,
+                            required: true,
+                        })}}
+				</div>
+
+				{% if parentId != null %}
+					<div class="formgroup">
+						<label for="articleRichtext">Inhoud</label>
+						{{ tag('textarea', {
+                                id: 'articleRichtext',
+                                name: 'fields[articleRichtext]',
+                                class: 'editor',
+                                text: dossierEntry.articleRichtext,
+                                required: true,
+                            }) }}
+					</div>
+				{% endif %}
+
+				{% if parentId == false %}
+					<div class="formgroup">
+						<label for="articleIntroduction">Dossier introductie</label>
+						{{ tag('textarea', {
+                            id: 'articleIntroduction',
+                            name: 'fields[articleIntroduction]',
+                            text: dossierEntry.articleIntroduction,
+                            required: true,
+                        }) }}
+					</div>
+				{% endif %}
+
+				<button class="button button--primary" type="submit">{{ parentId ? 'Bewaar pagina' : 'Bewaar dossier'}}</button>
+			</form>
+		</div>
+	</div>
+</div>{% endblock %}

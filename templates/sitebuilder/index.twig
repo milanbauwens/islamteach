@@ -4,7 +4,7 @@
 
 	{% set ownedArticles = craft.entries()
 		.section('dossiers')
-		.hasDescendants()
+		.level(1)
 		.authorID(craft.app.user.id)
 		.all() 
 	%}
@@ -15,7 +15,7 @@
 
 		<div class="flex flex--between">
 			<h1 class="title title--flex">Mijn verdiepingsdossiers</h1>
-			<a href="{{siteUrl}}/sitebuilder/create" class="action__icon">
+			<a href="{{siteUrl}}sitebuilder/create" class="action__icon">
 				<img src="{{siteUrl}}/assets/resources/icons/plus.svg">
 			</a>
 		</div>

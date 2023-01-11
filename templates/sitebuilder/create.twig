@@ -5,9 +5,10 @@
 	<div class="wrapper--small">
 
 		{% set entry = entry ?? create('craft\\elements\\Entry') %}
-		{% set themes = craft.categories.all() %}
+		{% set themes = craft.categories.group('themes').all() %}
 		{% set new = entry.id is null %}
 		{% set parentId = craft.app.request.getParam('parentId') %}
+
 		{% if parentId != null %}
 			{% set parentEntry = craft.entries.id(parentId).one() %}
 			{% set parentSlug = parentEntry.slug %}
@@ -24,17 +25,17 @@
 			<form class="form" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 				{{ csrfInput() }}
 				{{ actionInput('entries/save-entry') }}
-				{% if parentId != null %}
-					{{ redirectInput(parentSlug ~ '/{slug}')}}
-				{% else %}
-					{{ redirectInput( siteUrl ~ '/{slug}')}}
-				{% endif %}
-				{{ hiddenInput('entryId', entry.id) }}
+				{{ hiddenInput('enabled', '1') }}
 				{{ hiddenInput('sectionId', '4') }}
 				{% if parentId != null %}
 					{{ hiddenInput('parentId', parentId) }}
 				{% endif %}
-				{{ hiddenInput('enabled', '1') }}
+
+				{% if parentId != null %}
+					{{ redirectInput(parentSlug ~ '/{slug}')}}
+				{% else %}
+					{{ redirectInput( siteUrl ~ '{slug}')}}
+				{% endif %}
 
 				<div class="formgroup">
 					<label for="title">Titel</label>
@@ -48,10 +49,10 @@
 					<label for="articleThumbnail">Thumbnail</label>
 					<div id="imgPreview"></div>
 					{{ input('file', 'fields[articleThumbnail][]', options={
- 					multiple: false,
-                    id: 'articleThumbnail',
-                    required: true,
-			    }) }}
+						multiple: false,
+						id: 'articleThumbnail',
+						required: true,
+					}) }}
 				</div>
 
 				{% if parentId == false %}
@@ -78,12 +79,12 @@
 					<div class="formgroup">
 						<label for="articleRichtext">Inhoud</label>
 						{{ tag('textarea', {
-                    id: 'articleRichtext',
-                    name: 'fields[articleRichtext]',
-					class: 'editor',
-                    text: entry.articleRichtext,
-                    required: true,
-                }) }}
+							id: 'articleRichtext',
+							name: 'fields[articleRichtext]',
+							class: 'editor',
+							text: entry.articleRichtext,
+							required: true,
+						}) }}
 					</div>
 				{% endif %}
 
@@ -91,12 +92,11 @@
 					<div class="formgroup">
 						<label for="articleIntroduction">Dossier introductie</label>
 						{{ tag('textarea', {
-                    id: 'articleIntroduction',
-                    name: 'fields[articleIntroduction]',
-					class: 'editor',
-                    text: entry.articleIntroduction,
-                    required: true,
-                }) }}
+							id: 'articleIntroduction',
+							name: 'fields[articleIntroduction]',
+							text: entry.articleIntroduction,
+							required: true,
+						}) }}
 					</div>
 				{% endif %}
 

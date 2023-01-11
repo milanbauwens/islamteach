@@ -55,17 +55,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\elements\conditions\LevelConditionRule
-                  maxValue: ''
-                  operator: '='
-                  uid: 5a8d3b29-9168-45f2-bd68-2591d25be7b0
-                  value: '1'
-              elementType: craft\elements\Entry
-              fieldContext: global
+            elementCondition: null
             fieldUid: 035fede9-061b-4a1c-8935-6c5dbc4f85e9 # Article Introduction
             instructions: null
             label: null
@@ -99,17 +89,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\elements\conditions\LevelConditionRule
-                  maxValue: ''
-                  operator: '='
-                  uid: b778bdd8-b039-4209-b5f1-6fb2be156856
-                  value: '1'
-              elementType: craft\elements\Entry
-              fieldContext: global
+            elementCondition: null
             fieldUid: 2f96dd37-227f-4569-a639-77faf69428ed # Article Themes
             instructions: null
             label: null
