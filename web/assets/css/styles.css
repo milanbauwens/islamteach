@@ -613,6 +613,10 @@ header a, header nav a{
     color: var(--neutral-900);
 }
 
+.detail__iframe {
+    margin-bottom: 3rem;
+}
+
 .detail__navigation {
     display: flex;
     align-items: center;

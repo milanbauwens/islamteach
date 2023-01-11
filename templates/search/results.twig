@@ -1,101 +1,144 @@
 {% extends "_layouts/site" %}
 
-{% set searchQuery = craft.app.request.getParam('q') %}
 
-{% paginate craft.entries({
+{% block content %}
+
+	{% set searchQuery = craft.app.request.getParam('q') %}
+
+	{% paginate craft.entries({
 	section: 'dossiers',
 	search: searchQuery,
+	level: 1,
 	limit: 12,
 }) as pageInfoDossiers, pageDossiers %}
 
-	{% paginate craft.entries({
+		{% paginate craft.entries({
 	section: 'escaperooms',
 	search: searchQuery,
 	limit: 12,
 }) as pageInfoEscaperooms, pageEscaperooms %}
 
-		{% block content %}
-			<div class="wrapper">
-				{% if (pageDossiers|length != 0 or pageEscaperooms|length != 0) and searchQuery != "" %}
+			{% paginate craft.entries({
+	section: 'researchdossiers',
+	search: searchQuery,
+	limit: 12,
+}) as pageInfoResearchdossiers, pageResearchdossiers%}
 
-					<h1 class="title">Zoekresultaten voor "{{searchQuery}}"</h1>
+				<div class="wrapper">
+					{% if (pageDossiers|length != 0 or pageEscaperooms|length != 0 or pageResearchdossiers|length != 0) and searchQuery != "" %}
 
-					{% if pageDossiers|length != 0 %}
-						<h2 class="subtitle">Verdiepingsdossiers</h2>
-						<div class="results__wrapper">
-							{% for article in pageDossiers %}
-								{% set image = article.articleThumbnail.one() %}
+						<h1 class="title">Zoekresultaten voor "{{searchQuery}}"</h1>
 
-								{% include "_includes/components/dossier" %}
-							{% endfor %}
-						</div>
+						{% if pageDossiers|length != 0 %}
+							<h2 class="subtitle">Verdiepingsdossiers</h2>
+							<div class="results__wrapper">
+								{% for article in pageDossiers %}
+									{% set image = article.articleThumbnail.one() %}
 
-						<nav class="pagination">
-							<div class="pagination__wrapper">
-
-								{% set dossierPages = pageInfoDossiers.getDynamicRangeUrls(pageInfoDossiers.totalPages) %}
-								{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
-
-								{% if dossierPages|length > 1 %}
-									{% for page in dossierPages %}
-
-										{% if currentUrl == page %}
-
-											<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
-
-										{% else %}
-
-											<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
-
-										{% endif %}
-									{% endfor %}
-								{% endif %}
+									{% include "_includes/components/dossier" %}
+								{% endfor %}
 							</div>
-						</nav>
+
+							<nav class="pagination">
+								<div class="pagination__wrapper">
+
+									{% set dossierPages = pageInfoDossiers.getDynamicRangeUrls(pageInfoDossiers.totalPages) %}
+									{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
+
+									{% if dossierPages|length > 1 %}
+										{% for page in dossierPages %}
+
+											{% if currentUrl == page %}
+
+												<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
+
+											{% else %}
+
+												<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
+
+											{% endif %}
+										{% endfor %}
+									{% endif %}
+								</div>
+							</nav>
+						{% endif %}
+
+						{% if pageEscaperooms|length != 0 %}
+							<h2 class="subtitle">Escaperooms</h2>
+							<div class="results__wrapper">
+								{% for escaperoom in pageEscaperooms %}
+									{% include "_includes/components/escaperoom" %}
+								{% endfor %}
+							</div>
+
+
+							<nav class="pagination">
+								<div class="pagination__wrapper">
+
+									{% set escaperoomPages = pageInfoEscaperooms.getDynamicRangeUrls(pageInfoEscaperooms.totalPages) %}
+									{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
+
+									{% if escaperoomPages|length > 1 %}
+										{% for page in escaperoomPages %}
+
+											{% if currentUrl == page %}
+
+												<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
+
+											{% else %}
+
+												<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
+
+											{% endif %}
+										{% endfor %}
+									{% endif %}
+								</div>
+							</nav>
+						{% endif %}
+
+						{% if pageResearchdossiers|length != 0 %}
+							<h2 class="subtitle">Onderzoeksvragen</h2>
+							<div class="results__wrapper">
+								{% for researchdossier in pageResearchdossiers %}
+									{% set image = researchdossier.researchdossierThumbnail.one() %}
+									{% include "_includes/components/researchdossier" %}
+								{% endfor %}
+							</div>
+
+
+							<nav class="pagination">
+								<div class="pagination__wrapper">
+
+									{% set researchdossierPages = pageInfoResearchdossiers.getDynamicRangeUrls(pageInfoResearchdossiers.totalPages) %}
+									{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
+
+									{% if researchdossierPages|length > 1 %}
+										{% for page in researchdossierPages %}
+
+											{% if currentUrl == page %}
+
+												<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
+
+											{% else %}
+
+												<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
+
+											{% endif %}
+										{% endfor %}
+									{% endif %}
+								</div>
+							</nav>
+						{% endif %}
+					{% else %}
+						<div class="flex flex--center">
+							<div class="state--empty">
+								<img src="{{siteUrl}}assets/resources/images/nothing-found.svg">
+								<h3>Geen resultaten</h3>
+								<p>Je zoekopdracht voor "{{searchQuery}}" heeft geen resultaten opgeleverd.
+								</p>
+							</div>
+						</div>
 					{% endif %}
 
-					{% if pageEscaperooms|length != 0 %}
-						<h2 class="subtitle">Escaperooms</h2>
-						<div class="results__wrapper">
-							{% for escaperoom in pageEscaperooms %}
-								{% include "_includes/components/escaperoom" %}
-							{% endfor %}
-						</div>
-
-
-						<nav class="pagination">
-							<div class="pagination__wrapper">
-
-								{% set escaperoomPages = pageInfoEscaperooms.getDynamicRangeUrls(pageInfoEscaperooms.totalPages) %}
-								{% set currentUrl = craft.app.request.getHostInfo() ~ craft.app.request.url %}
-
-								{% if escaperoomPages|length > 1 %}
-									{% for page in escaperoomPages %}
-
-										{% if currentUrl == page %}
-
-											<a class="pagination__link--active" href="{{page}}">{{loop.index}}</a>
-
-										{% else %}
-
-											<a class="pagination__link" href="{{page}}">{{loop.index}}</a>
-
-										{% endif %}
-									{% endfor %}
-								{% endif %}
-							</div>
-						</nav>
-					{% endif %}
-				{% else %}
-					<div class="flex flex--center">
-						<div class="state--empty">
-							<img src="{{siteUrl}}assets/resources/images/nothing-found.svg">
-							<h3>Geen resultaten</h3>
-							<p>Je zoekopdracht voor "{{searchQuery}}" heeft geen resultaten opgeleverd.
-							</p>
-						</div>
-					</div>
-				{% endif %}
-
-			</div>
-		{% endblock %}
+				</div>
+			{% endblock %}

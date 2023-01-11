@@ -11,6 +11,10 @@
 		.relatedTo(category)
 		.all()
 	%}
+	{% set researchdossiers = craft.entries({section: 'researchdossiers'})
+		.relatedTo(category)
+		.all()
+	%}
 
 
 	<div class="wrapper">
@@ -19,7 +23,7 @@
 				<h1 class=" title">{{category.title}}</h1>
 			</div>
 
-			{% if escaperooms or articles %}
+			{% if escaperooms or articles or researchdossiers %}
 				{% if articles %}
 					<h2 class="subtitle">Verdiepingsdossiers</h2>
 					<div class="escaperoom__wrapper">
@@ -36,6 +40,17 @@
 					<div class="escaperoom__wrapper">
 						{% for escaperoom in escaperooms %}
 							{% include "_includes/components/escaperoom" %}
+						{% endfor %}
+					</div>
+				{% endif %}
+
+				{% if researchdossiers %}
+					<h2 class="subtitle">Onderzoeksvragen</h2>
+					<div class="escaperoom__wrapper">
+						{% for researchdossier in researchdossiers %}
+							{% set image = researchdossier.researchdossierThumbnail.one() %}
+
+							{% include "_includes/components/researchdossier" %}
 						{% endfor %}
 					</div>
 				{% endif %}
