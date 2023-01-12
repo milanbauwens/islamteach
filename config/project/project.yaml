@@ -1,4 +1,4 @@
-dateModified: 1673459058
+dateModified: 1673535748
 elementSources:
   craft\elements\Category:
     -
@@ -132,7 +132,7 @@ meta:
     d61d67b7-b6ea-4b7e-bc9e-bc77c7a7a9d8: 'Researchdossier Overview' # Researchdossier Overview
     da3d37a9-015d-4139-851e-165cffbcf443: Url # Url
     dca4d31f-f810-4d55-b207-01e53a055a21: 'Source Link' # Source Link
-    dcdfcd06-f1f9-455b-af3c-15b555accee2: Default # Articles
+    dcdfcd06-f1f9-455b-af3c-15b555accee2: Default # Default
     deb9e3e5-e686-4874-aa1c-c6e27c51ae74: 'Dossier Overview' # Dossier Overview
     f3455c98-6520-43ce-a2ac-1683fd9f14cf: Features # Features
     f27169dd-394b-43f3-a168-a31798fdb956: 'Researchdossier Sources' # Researchdossier Sources

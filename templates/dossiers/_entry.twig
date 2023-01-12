@@ -46,7 +46,7 @@
 						{% if entry.level == 1 %}
 							<a href="{{ siteUrl('sitebuilder/edit', {entryId: entry.id}) }}">Bewerken</a>
 						{% else %}
-							<a href="{{ siteUrl('sitebuilder/create', {entryId: entry.id, parentId: entry.parent.id}) }}">Bewerken</a>
+							<a href="{{ siteUrl('sitebuilder/edit', {entryId: entry.id, parentId: entry.parent.id}) }}">Bewerken</a>
 						{% endif %}
 						<form method="post" accept-charset="UTF-8">
 							{{ csrfInput() }}

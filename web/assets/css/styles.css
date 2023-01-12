@@ -97,6 +97,7 @@ main .container--grey{
     align-items: center;
     width: 100%;
     margin-bottom: 2rem;
+    gap: 1rem;
 }
 
 .flex--center {
@@ -467,7 +468,7 @@ header a, header nav a{
 
 .article {
     text-decoration: none;
-    min-height: 20rem;
+    min-height: 21rem;
     max-width: 22rem;
     padding: 1rem;
     width: 100%;
@@ -571,6 +572,7 @@ header a, header nav a{
 
 .detail__text {
     font-family: var(--font-sans);
+    line-height: 150%;
     color: var(--neutral-900);
     margin-bottom: 5rem;
 }
@@ -578,25 +580,28 @@ header a, header nav a{
 .detail__text p, .detail-variant__text p {
     color: var(--neutral-900);
     line-height: 150%;
-    font-size: 1rem;
+    font-size: 1rem!important;
     margin-bottom: 1.5rem;
 }
 
 .detail__text h1, .detail-variant__text h1 {
     color: var(--neutral-900);
-    font-size: 2rem;
+    font-size: 2rem!important;
+    line-height: 150%;
     margin-bottom: 2rem;
 }
 
 .detail__text h2, .detail-variant__text h2 {
     color: var(--neutral-900);
-    font-size: 1.5rem;
+    font-size: 1.5rem!important;
+    line-height: 150%;
     margin-bottom: 1.5rem;
 }
 
-.detail__text h3, .detail-variant__text H3 {
+.detail__text h3, .detail-variant__text h3 {
     color: var(--neutral-900);
-    font-size: 1.25rem;
+    font-size: 1.25rem!important;
+    line-height: 150%;
     margin-bottom: 1.5rem;
 }
 
@@ -709,7 +714,6 @@ header a, header nav a{
     gap: 2rem;
     text-decoration: none;
     grid-column: span 1;
-    width: 400px;
     box-shadow: 1px 1px 5px 0px rgba(76, 79, 81, 0.2);
     border-radius: 1rem;
     padding: 2rem;

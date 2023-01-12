@@ -61,8 +61,8 @@ fieldLayouts:
                 -
                   class: craft\elements\conditions\LevelConditionRule
                   maxValue: ''
-                  operator: '='
-                  uid: 3ee28412-eb71-43fe-af1b-6fbe71fa4a92
+                  operator: '<='
+                  uid: ee21c4b8-3785-4d8a-b1b4-9c64e0e01220
                   value: '1'
               elementType: craft\elements\Entry
               fieldContext: global
@@ -105,8 +105,8 @@ fieldLayouts:
                 -
                   class: craft\elements\conditions\LevelConditionRule
                   maxValue: ''
-                  operator: '='
-                  uid: e03ede73-c101-436c-b0a3-0ac84491b2ab
+                  operator: '<='
+                  uid: 6d0b02cb-c4d7-4003-b96f-649464e4847f
                   value: '1'
               elementType: craft\elements\Entry
               fieldContext: global
