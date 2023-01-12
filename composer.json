@@ -3,10 +3,7 @@
     "craftcms/cms": "^4.2.7",
     "craftcms/contact-form": "3.0.0",
     "craftcms/redactor": "3.0.3",
-    "spicyweb/craft-embedded-assets": "3.1.1",
     "studioespresso/craft-dumper": "3.0.1",
-    "twig/extra-bundle": "^3.5",
-    "twig/string-extra": "^3.5",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
