@@ -1,0 +1,16 @@
+{# Flash Message #}
+{% if craft.app.session.hasFlash('notice') %}
+	<div class="flash flash--success">
+		<div class="flash__container flash__container--success">
+			<img class="flash__icon" src="{{siteUrl}}assets/resources/icons/success.svg">
+		</div>
+		<p class="flash__message flash__message--success">{{ craft.app.session.getFlash('notice') }}</p>
+	</div>
+{% elseif craft.app.session.hasFlash('error') %}
+	<div class="flash flash--error">
+		<div class="flash__container flash__container--error">
+			<img class="flash__icon" src="{{siteUrl}}assets/resources/icons/error.svg">
+		</div>
+		<p class="flash__message flash__message--error">{{ craft.app.session.getFlash('error') }}</p>
+	</div>
+{% endif %}

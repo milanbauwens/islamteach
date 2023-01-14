@@ -22,9 +22,13 @@
 			<form class="form" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 				{{ csrfInput() }}
 				{{ actionInput('entries/save-entry') }}
+				{{ failMessageInput('Er is iets misgegaan. Probeer het later opnieuw') }}
 				{% if parentId != null %}
 					{{ redirectInput(parentSlug ~ '/{slug}')}}
+					{{ successMessageInput('Pagina opgeslagen!') }}
+
 				{% else %}
+					{{ successMessageInput('Verdiepingsdossier opgeslagen!') }}
 					{{ redirectInput( siteUrl ~ '{slug}')}}
 				{% endif %}
 				{{ hiddenInput('entryId', dossierEntry.id) }}

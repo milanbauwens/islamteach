@@ -38,6 +38,7 @@ editor.forEach(element => {
 const dropdownBtn = document.getElementById('dropdownBtn');
 const dropdownContent = document.getElementById('dropdownContent');
 
+if(dropdownBtn) {
 dropdownBtn.addEventListener('click', (e) => {
   if (dropdownContent.classList.contains('show')) {
     dropdownContent.classList.remove('show')
@@ -45,6 +46,7 @@ dropdownBtn.addEventListener('click', (e) => {
     dropdownContent.classList.add('show')    
   }
 })
+}
 
 // Froala Editor
 setTimeout(function () {
@@ -53,4 +55,14 @@ setTimeout(function () {
           $(this).hide();
       }
   });
-}, 50);
+}, 100);
+
+
+$( document ).ready(function() {
+  let $showFlash = $(".flash");
+  if ($showFlash) {
+    setTimeout(function () {
+      $showFlash.fadeOut('fast');
+    }, 4000);
+  }
+});

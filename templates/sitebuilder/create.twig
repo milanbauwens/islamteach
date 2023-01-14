@@ -27,14 +27,16 @@
 				{{ actionInput('entries/save-entry') }}
 				{{ hiddenInput('enabled', '1') }}
 				{{ hiddenInput('sectionId', '4') }}
+				{{ failMessageInput('Er is iets misgegaan. Probeer het later opnieuw') }}
 				{% if parentId != null %}
 					{{ hiddenInput('parentId', parentId) }}
 				{% endif %}
-
 				{% if parentId != null %}
 					{{ redirectInput(parentSlug ~ '/{slug}')}}
+					{{ successMessageInput('Nieuwe pagina aangemaakt!') }}
 				{% else %}
 					{{ redirectInput( siteUrl ~ '{slug}')}}
+					{{ successMessageInput('Nieuw verdiepingsdossier aangemaakt!') }}
 				{% endif %}
 
 				<div class="formgroup">

@@ -35,13 +35,6 @@
 
 				<button type="submit" class="button button--primary">Verstuur</button>
 			</form>
-
-			{% if craft.app.session.hasFlash('notice') %}
-				<p class="success">{{ craft.app.session.getFlash('notice') }}</p>
-			{% elseif craft.app.session.hasFlash('error') %}
-				<p class="error">{{ craft.app.session.getFlash('error') }}</p>
-			{% endif %}
-
 		{% else %}
 			{% set action = entry.heroLink.one() %}
 			<div class="hero__action">

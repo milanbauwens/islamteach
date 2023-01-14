@@ -1216,6 +1216,10 @@ footer {
 
 .show {display:block;}
 
+/**
+*  States
+*/
+
 .state--empty {
     margin: 2rem 0;
     display: flex;
@@ -1242,4 +1246,58 @@ footer {
     font-weight: 500;
     color: var(--neutral-700);
     margin-bottom: 5rem;
+}
+
+/**
+*  Flash Messages
+*/
+
+.flash {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    width: fit-content;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--neutral-100);
+    border-radius: 16px 0 0 16px;
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.2);
+}
+
+.flash__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+}
+
+.flash__icon {
+    width: 32px;
+}
+
+.flash__container--success {
+    background-color: var(--success-100);
+}
+
+.flash__container--error {
+    background-color: var(--error-100);
+}
+
+.flash__message {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--neutral-900);
+    padding: 0 2rem 0 1rem;
+}
+
+.flash__message--success {
+    color: var(--tertiary-900);
+}
+
+.flash__message--error {
+    color: var(--primary-900);
 }
