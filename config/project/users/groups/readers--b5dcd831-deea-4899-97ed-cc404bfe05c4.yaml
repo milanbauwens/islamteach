@@ -1,12 +1,19 @@
 description: ''
 handle: readers
-name: Readers
+name: Lezers
 permissions:
+  - 'saveentries:3c7f3529-7f31-4cad-ad38-81a487acec33' # Set Password
+  - 'saveentries:4b59c426-8e44-4212-90b5-c323a9cdc382' # Reset Password
   - 'viewassets:a9f8cd7f-5cfe-4c94-8055-9fdd73c3c08f' # Uploads
   - 'viewcategories:aa37cc9c-6e1f-4bc4-96f8-4de66f06ac3f' # Themes
+  - 'viewentries:04306b3e-f8c6-4b53-8659-0661d9004fbf' # Researchdossier Overview
   - 'viewentries:3ab2bb8a-1022-4573-80f1-dfab7b5688b7' # Login
   - 'viewentries:3c7f3529-7f31-4cad-ad38-81a487acec33' # Set Password
+  - 'viewentries:4638a363-ab2d-4ef4-b573-21cbcabf62f7' # Escaperooms
   - 'viewentries:4b59c426-8e44-4212-90b5-c323a9cdc382' # Reset Password
+  - 'viewentries:5ac22ce5-ee2c-4a4d-9fa2-f77f1224471b' # Researchdossiers
   - 'viewentries:607f48b6-ad44-48b9-8958-e669915f6b28' # Dashboard
   - 'viewentries:6eece8c8-71a4-4945-83f3-b8992cf3bdbf' # Dossiers
   - 'viewentries:931f3411-3c8e-4d4e-bec1-544a33289596' # Home
+  - 'viewentries:9f21345c-536f-4343-b4ba-766b6b87e5cf' # Dossier Overview
+  - 'viewentries:a1f9808d-c4a1-4435-816c-adf84ca258be' # Escaperoom Overview

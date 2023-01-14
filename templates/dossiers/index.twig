@@ -12,9 +12,11 @@
 				<h1 class="title title--flex">Alle verdiepingsdossiers
 					<span class="results__count">{{articles|length}}</span>
 				</h1>
-				<a href="{{siteUrl}}sitebuilder/create" class="action__icon">
-					<img src="{{siteUrl}}/assets/resources/icons/plus.svg">
-				</a>
+				{% if currentUser.isInGroup('readers') == false %}
+					<a href="{{siteUrl}}sitebuilder/create" class="action__icon">
+						<img src="{{siteUrl}}/assets/resources/icons/plus.svg">
+					</a>
+				{% endif %}
 			</div>
 
 			{% if articles|length > 0 %}

@@ -2,6 +2,10 @@
 
 {% block content %}
 
+	{% requirePermission "teachers" %}
+	{% requirePermission "students" %}
+
+
 	{% set ownedArticles = craft.entries()
 		.section('dossiers')
 		.level(1)

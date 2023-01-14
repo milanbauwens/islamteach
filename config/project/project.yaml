@@ -1,4 +1,4 @@
-dateModified: 1673535748
+dateModified: 1673729454
 elementSources:
   craft\elements\Category:
     -
@@ -103,7 +103,7 @@ meta:
     2248829f-eb6a-4c54-951f-d7e5c4b263ab: 'Featured Articles' # Featured Articles
     3409595f-1bb2-411a-8d8f-15031820fb62: Label # Label
     9461779e-6e19-4a60-aa1d-3471bf2a5ed8: Homepage # Homepage
-    9524199c-510f-4a96-871c-20643545a6f4: Administrators # Administrators
+    9524199c-510f-4a96-871c-20643545a6f4: Leerkrachten # Leerkrachten
     30377148-20b5-4e1c-bde8-b1e3a6dc2205: 'Researchdossier Thumbnail' # Researchdossier Thumbnail
     34612708-31bc-48ec-b979-dbaf0a32ee2c: Common # Common
     65916778-9e99-450d-9b03-c1d0f5731958: Themes # Themes
@@ -119,8 +119,8 @@ meta:
     aab28b7b-6cb8-4700-8630-eaeeaab2a09a: Videos # Videos
     ab32fc27-9390-487b-bfc0-825fbc9c03e8: 'Researchdossier Videos' # Researchdossier Videos
     aee9c1e6-ff9b-45da-9eba-90b7df262b1d: 'Article Thumbnail' # Article Thumbnail
-    b1d09ac0-ac13-4acf-a2ca-828b011e197c: Students # Students
-    b5dcd831-deea-4899-97ed-cc404bfe05c4: Readers # Readers
+    b1d09ac0-ac13-4acf-a2ca-828b011e197c: Studenten # Studenten
+    b5dcd831-deea-4899-97ed-cc404bfe05c4: Lezers # Lezers
     b7acd107-9e81-4b5d-a429-ab01a2f2f077: Menu # Menu
     b142b030-eac4-4ae3-8b2c-75cb0753e1a3: 'Page Content' # Page Content
     b6253f30-c328-43f1-a291-f7596c950d11: 'Video Name' # Video Name

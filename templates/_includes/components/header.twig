@@ -8,11 +8,14 @@
 		{% for menuItem in menuItems %}
 			{% set destination = menuItem.entry.one() %}
 			{% set activeLink = 
-							(craft.app.request.segments|first == destination.uri
-							or 
-							craft.app.request.segments|first == false and destination.uri == '__home__') %}
+				(craft.app.request.segments|first == destination.uri
+				or 
+				craft.app.request.segments|first == false and destination.uri == '__home__') 
+			%}
 
-			<a href="{{ destination.url }}" class="nav__link  {{ activeLink ? 'nav__link--active' }}">{{ menuItem.label }}</a>
+			{% if (currentUser.isInGroup('readers') and destination.uri == 'sitebuilder') == false %}
+				<a href="{{ destination.url }}" class="nav__link  {{ activeLink ? 'nav__link--active' }}">{{ menuItem.label }}</a>
+			{% endif %}
 		{% endfor %}
 
 		<a class="button button--secondary" href="/logout">

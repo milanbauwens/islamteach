@@ -18,6 +18,8 @@
 
 	</div>
 
-	{% include "_includes/components/banner" %}
+	{% if currentUser.isInGroup('readers') == false  %}
+		{% include "_includes/components/banner" %}
+	{% endif %}
 
 {% endblock %}
