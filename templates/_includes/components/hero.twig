@@ -17,7 +17,8 @@
 			<form method="post" class="hero__form">
 				{{ csrfInput() }}
 				{{ actionInput('contact-form/send') }}
-
+				{{ failMessageInput('Er is iets misgelopen. Probeer het later opnieuw.')}}
+				{{ successMessageInput('Bedankt voor je aanvraag. We laten je zo snel mogelijk iets weten. ') }}
 
 				{{ input('E-mail', 'fromEmail', submission.fromEmail ?? '', {
         		id: 'from-email',
