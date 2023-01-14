@@ -1,8 +1,11 @@
 {% extends "_layouts/page" %}
 
 {% block content %}
-	{% requirePermission "teachers" %}
-	{% requirePermission "students" %}
+
+	{# redirect if user in is group readers  #}
+	{% if currentUser.isInGroup('readers') %}
+		{% do craft.app.response.redirect(siteUrl ~ 'dashboard') %}
+	{% endif %}
 
 	<div class="wrapper--small">
 		{% set entryId = craft.app.request.getParam('entryId') %}
@@ -24,13 +27,13 @@
 			<form class="form" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
 				{{ csrfInput() }}
 				{{ actionInput('entries/save-entry') }}
-				{{ failMessageInput('Er is iets misgegaan. Probeer het later opnieuw') }}
+				{{ failMessageInput('Er is iets misgegaan. Probeer het later opnieuw.') }}
 				{% if parentId != null %}
 					{{ redirectInput(parentSlug ~ '/{slug}')}}
-					{{ successMessageInput('Pagina opgeslagen!') }}
+					{{ successMessageInput('Pagina opgeslagen.') }}
 
 				{% else %}
-					{{ successMessageInput('Verdiepingsdossier opgeslagen!') }}
+					{{ successMessageInput('Verdiepingsdossier opgeslagen.') }}
 					{{ redirectInput( siteUrl ~ '{slug}')}}
 				{% endif %}
 				{{ hiddenInput('entryId', dossierEntry.id) }}

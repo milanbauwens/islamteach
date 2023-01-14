@@ -1,8 +1,11 @@
 {% extends "_layouts/page" %}
 
 {% block content %}
-	{% requirePermission "teachers" %}
-	{% requirePermission "students" %}
+
+	{# redirect if user in is group readers  #}
+	{% if currentUser.isInGroup('readers') %}
+		{% do craft.app.response.redirect(siteUrl ~ 'dashboard') %}
+	{% endif %}
 
 	<div class="wrapper--small">
 
@@ -29,16 +32,16 @@
 				{{ actionInput('entries/save-entry') }}
 				{{ hiddenInput('enabled', '1') }}
 				{{ hiddenInput('sectionId', '4') }}
-				{{ failMessageInput('Er is iets misgegaan. Probeer het later opnieuw') }}
+				{{ failMessageInput('Er is iets misgegaan. Probeer het later opnieuw.') }}
 				{% if parentId != null %}
 					{{ hiddenInput('parentId', parentId) }}
 				{% endif %}
 				{% if parentId != null %}
 					{{ redirectInput(parentSlug ~ '/{slug}')}}
-					{{ successMessageInput('Nieuwe pagina aangemaakt!') }}
+					{{ successMessageInput('Nieuwe pagina aangemaakt.') }}
 				{% else %}
 					{{ redirectInput( siteUrl ~ '{slug}')}}
-					{{ successMessageInput('Nieuw verdiepingsdossier aangemaakt!') }}
+					{{ successMessageInput('Nieuw verdiepingsdossier aangemaakt.') }}
 				{% endif %}
 
 				<div class="formgroup">

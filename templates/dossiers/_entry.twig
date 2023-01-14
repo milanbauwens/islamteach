@@ -52,6 +52,8 @@
 							{{ csrfInput() }}
 							{{ actionInput('entries/save-entry') }}
 							{{ hiddenInput('entryId', entry.id) }}
+							{{ successMessageInput('Verdiepingsdossier verwijderd')}}
+							{{ failMessageInput('Er is iets misgelopen. Probeer het later opnieuw.')}}
 							{{ hiddenInput('enabled', '0') }}
 							{{ redirectInput( siteUrl ~ 'sitebuilder') }}
 							<button type="submit" class="dropdown-item">Verwijderen</button>

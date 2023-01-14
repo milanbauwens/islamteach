@@ -1135,7 +1135,7 @@ footer p {
 
 .error__action {
     position: absolute;
-    bottom: 8rem;
+    bottom: 0;
 }
 
 .error__image {

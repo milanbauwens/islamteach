@@ -2,8 +2,10 @@
 
 {% block content %}
 
-	{% requirePermission "teachers" %}
-	{% requirePermission "students" %}
+	{# redirect if user in is group readers  #}
+	{% if currentUser.isInGroup('readers') %}
+		{% do craft.app.response.redirect(siteUrl ~ 'dashboard') %}
+	{% endif %}
 
 
 	{% set ownedArticles = craft.entries()
