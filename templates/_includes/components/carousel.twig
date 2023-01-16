@@ -1,6 +1,9 @@
 <div class="my-slider carousel-theme__wrapper">
 	{% set themes = craft.categories().group('themes') %}
 
+	{% set themeCount = themes|length / 7 %}
+	{% set themeCountRounded = themeCount|round(0, 'ceil') %}
+
 	{% for theme in themes %}
 		{% set icon = theme.themeIcon.one() %}
 		<div>
@@ -14,8 +17,7 @@
 	{% endfor %}
 </div>
 <div class="carousel__nav">
-	<div class="carousel__dot"></div>
-	<div class="carousel__dot"></div>
-	<div class="carousel__dot"></div>
-	<div class="carousel__dot"></div>
+	{% for i in range(1, themeCountRounded) %}
+		<div class="carousel__dot"></div>
+	{% endfor %}
 </div>

@@ -1,4 +1,4 @@
-dateModified: 1673870641
+dateModified: 1673884961
 elementSources:
   craft\elements\Category:
     -
@@ -32,7 +32,7 @@ fs:
     settings:
       path: '@webroot/uploads'
     type: craft\fs\Local
-    url: null
+    url: '@webroot/uploads'
 meta:
   __names__:
     0cf9ac8d-a36e-43b0-80a5-920ec30858fb: 'Menu Items' # Menu Items
