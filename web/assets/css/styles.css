@@ -790,9 +790,10 @@ header a, header nav a{
 .escaperoom__wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     margin-bottom: 4rem;
+    gap: 1rem;
 }
 
 .escaperoom {
