@@ -7,7 +7,6 @@
 			<form method="post" accept-charset="UTF-8">
 				{{ csrfInput() }}
 				{{ actionInput('users/login') }}
-				{{ failMessageInput('Er is iets misgegaan. Probeer het later opnieuw') }}
 
 
 				{% if errorMessage is defined %}
@@ -23,7 +22,7 @@
 				</div>
 
 				<div class="formgroup">
-					<label for="password">Password</label>
+					<label for="password">Wachtwoord</label>
 					{{ input('password', 'password', null, {
                         id: 'password',
                     }) }}
@@ -31,7 +30,7 @@
 				<div class="formgroup">
 					<label>
 						{{ input('checkbox', 'rememberMe', '1') }}
-						Remember me
+						Onthoud mij
 					</label>
 				</div>
 
@@ -39,7 +38,7 @@
 			</form>
 
 			<p class="formgroup formgroup--center">
-				<a class="link" href="{{ url('reset-password') }}">Forgot your password?</a>
+				<a class="link" href="{{ url('reset-password') }}">Wachtwoord vergeten?</a>
 			</p>
 
 		</div>
